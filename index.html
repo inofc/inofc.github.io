@@ -61,6 +61,7 @@ details.prev .list{margin-top:10px}
 .bars .row{display:grid;grid-template-columns:92px 1fr 34px;gap:8px;align-items:center;margin:5px 0;font:12px var(--mono)}.bars .bar{height:14px;background:var(--blue)}.bars .row:nth-child(3n+2) .bar{background:var(--red)}.bars .row:nth-child(3n) .bar{background:var(--yel)}.bars .n{text-align:right}
 .big{font:800 30px var(--sans)}.big small{font:12px var(--mono)}
 .mini{font:12px var(--mono)!important;color:var(--mut);margin:2px 0 8px!important}.card.fs .logos{display:flex;gap:8px;margin-bottom:10px}.card.fs .logos img{width:64px;height:64px;border-radius:12px}
+.sbtn{display:flex;flex-wrap:wrap;gap:8px}.sbtn .btn{margin:0;padding:11px 15px}
 /* timeline */
 .tl-f{display:flex;gap:6px;margin:4px 0 18px}.tl-f button{font:600 12px var(--mono);border:2px solid var(--ink);background:#fff;padding:5px 10px;cursor:pointer}
 .tl-f button.on{background:var(--ink);color:#fff}
@@ -314,7 +315,10 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <div class="stats-pub" id="tstats"><h3>What people ask T.JAI <small>last 30 days</small></h3><div class="bars" id="tbars">loading…</div></div>
 
 </section>
-<section id="contact"><h2>Contact &amp; About</h2><p class="lead">The fastest way to reach me is a LinkedIn message.</p><a class="btn" href="https://www.linkedin.com/in/nickgushchin/">Message on LinkedIn</a> <a class="btn ghost" href="https://x.com/nickgushchin">X</a> <a class="btn ghost" href="https://www.youtube.com/@Nick_AI_Builder">YouTube</a> <a class="btn ghost" href="https://t.me/ai_nikolai_channel">Telegram</a>
+<section id="contact"><h2>Contact &amp; About</h2><p class="lead">The fastest way to reach me is a LinkedIn message.</p><div class="sbtn"><a class="btn" style="background:var(--blue);color:#fff" href="https://www.linkedin.com/in/nickgushchin/">Follow me on LinkedIn</a>
+  <a class="btn" style="background:var(--ink);color:#fff" href="https://x.com/nickgushchin">Connect on X</a>
+  <a class="btn" style="background:var(--red);color:#fff" href="https://www.youtube.com/@Nick_AI_Builder">Watch my YouTube channel</a>
+  <a class="btn" style="background:var(--yel);color:var(--ink)" href="https://t.me/ai_nikolai_channel">Subscribe to my Telegram channel</a></div>
   <h3 style="margin:30px 0 6px">About this website</h3>
   <p class="lead">Its style is a tribute to Piet Mondrian, my favourite artist: primary colours, black lines, nothing extra. The site is built and maintained by JAI, my AI agent, and hosted for free on GitHub Pages. T.JAI, the chat, runs on Cloudflare's free tier. No cookies, no tracking.</p>
   <div class="stats-pub" id="vstats"><h3>Visits <small>last 30 days, counted anonymously</small></h3><div id="vnums">loading…</div><div class="bars" id="vsrc"></div></div>
