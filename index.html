@@ -115,7 +115,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Projects</b><small>JAI agent · Krugozore · Fictional Switzerland</small></a>
   <a class="c" href="#/social"><span class="arrow">→</span><b class="lbl">Talks</b><small>Head of AI Club · conferences</small></a>
   <a class="p" href="#/pubs"><span class="arrow">→</span><b class="lbl">Writing</b><small>Interviews · key posts</small></a>
-  <a class="j" href="#/agent">ask JAI's<br><b>twin brother</b><br>→</a>
+  <a class="j" href="#/agent">ask<br><b>T.JAI</b><br>JAI's twin →</a>
   <a class="k" href="#/contact"><b>Contact</b></a>
 </div>
 </main>
@@ -168,7 +168,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <div class="chips"><span class="chip live">working every day</span><span class="chip">personal AI agent · OpenClaw</span></div>
     <h3>JAI, my personal AI agent</h3>
     <p>Built on OpenClaw, then transformed and tailored to the way I work. JAI supports me in idea generation, preparation, marketing, coding, testing, communication, family arrangements and much more. It also built and maintains this website.</p>
-    <a class="btn" href="#/agent">Ask JAI's twin brother</a>
+    <a class="btn" href="#/agent">Ask T.JAI, JAI's twin brother</a>
   </div></div>
 
   <div class="card"><img src="img/krugozore.png" alt=""><div>
@@ -260,13 +260,13 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <li class="study"><span class="y">2001 – 2006</span><h3>IBI</h3><p>Banking · Management and Anti-crisis Management</p></li>
     <li class="study"><span class="y"></span><h3>Certificates</h3><p>ITIL · management, finance, risk and financial modelling</p></li>
   </ol></section>
-<section id="agent"><h2>JAI twin brother</h2><p class="lead">Ask about my trainings, AI projects, talks and writing. JAI, my real agent, stays private; his twin brother answers here.</p>
+<section id="agent"><h2>T.JAI</h2><p class="lead">The twin brother of my AI agent. Ask about my trainings, AI projects, talks and writing. JAI, my real agent, stays private; T.JAI answers here.</p>
   <p class="note">It uses free AI models and runs on a free service with limited access. It knows only what's on this site and is not connected to Nick's real assistant.</p>
   <div class="a">
-    <div class="h">JAI twin brother</div>
-    <div class="who">twin@inofc: ~ (free public demo)</div>
-    <div class="out" id="out"><span class="q">twin$</span> pick a topic below, or type a question</div>
-    <form id="f"><b>twin$</b><input id="in" placeholder="type a question" autocomplete="off" maxlength="500"></form>
+    <div class="h">T.JAI · twin brother of JAI</div>
+    <div class="who">t.jai@inofc: ~ (free public demo)</div>
+    <div class="out" id="out"><span class="q">t.jai$</span> pick a topic below, or type a question</div>
+    <form id="f"><b>t.jai$</b><input id="in" placeholder="type a question" autocomplete="off" maxlength="500"></form>
     <div id="ts"></div>
     <div class="quota" id="quota">AI questions left today: …</div>
     <div class="closed" id="closed" hidden></div>
@@ -289,7 +289,7 @@ addEventListener('hashchange',route);route();
 const TWIN={url:'https://jai-twin.jai-twin.workers.dev/chat',sitekey:'0x4AAAAAAFYsg9vIO3TT2mPi'};
 const A={
  trainings:'Nick teaches leaders to put AI to work.\n· Public masterclass: AI agents with Claude and GPT, 11 + 25 Nov online, 28 Nov in Zurich\n· Private Executive programmes\n· Digicomp Academy course\n→ <a href="#/trainings">open Trainings</a>',
- lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (my brother; I\'m only his public twin)\n· Krugozore AI chatbot on Telegram, 110K users since 2023\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
+ lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (my brother; I\'m T.JAI, his public twin)\n· Krugozore AI chatbot on Telegram, 110K users since 2023\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
  talks:'Next: guest lecture at ETH Zurich, 18 Nov. Recent: .NET Day Switzerland.\nHe also hosts the Head of AI Club Zurich.\n→ <a href="#/social">open Speaking</a>',
  writing:'Two long interviews, plus posts on the atomic AI company and why the model is not your advantage.\n→ <a href="#/pubs">open Writing</a>',
  contact:'Fastest: a LinkedIn message.\n→ <a href="https://www.linkedin.com/in/nickgushchin/">linkedin.com/in/nickgushchin</a>',
@@ -298,7 +298,7 @@ const K=[['trainings',/train|class|course|teach|workshop|digicomp|book/],['lab',
 const out=document.getElementById('out'),inp=document.getElementById('in');
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const linkify=s=>esc(s).replace(/https:\/\/[^\s)<]+[^\s)<.,;:!?'"]/g,u=>u.startsWith('https://inofc.github.io/#/')?'<a href="'+u.slice(24)+'">'+u+'</a>':'<a href="'+u+'" target="_blank" rel="noopener">'+u+'</a>');
-function show(q,html){out.innerHTML+='\n\n<span class="q">twin$ '+esc(q)+'</span>\n'+html;out.scrollTop=1e6}
+function show(q,html){out.innerHTML+='\n\n<span class="q">t.jai$ '+esc(q)+'</span>\n'+html;out.scrollTop=1e6}
 function canned(q){return A[(K.find(([,r])=>r.test(q.toLowerCase()))||['help'])[0]]}
 /* Turnstile: one fresh token per message */
 let wid=null,tokWait=null,tok='';
