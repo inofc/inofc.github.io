@@ -48,6 +48,9 @@
 details.prev{margin-top:12px}details.prev summary{display:inline-block;cursor:pointer;font:600 13px var(--sans);padding:7px 12px;border:2px solid var(--ink);list-style:none}
 details.prev summary::-webkit-details-marker{display:none}details.prev summary::after{content:" ▾"}details.prev[open] summary::after{content:" ▴"}
 details.prev .list{margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:4px 0 10px}.stats div{border-left:4px solid var(--red);padding:2px 0 2px 8px}.stats b{display:block;font:800 20px var(--sans)}.stats span{font:11px/1.3 var(--mono);color:var(--mut)}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.chips.tech .chip{background:#f3f1ec}
 /* timeline */
 .tl-f{display:flex;gap:6px;margin:4px 0 18px}.tl-f button{font:600 12px var(--mono);border:2px solid var(--ink);background:#fff;padding:5px 10px;cursor:pointer}
 .tl-f button.on{background:var(--ink);color:#fff}
@@ -104,7 +107,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <small>My path: work &amp; study</small></div>
   </a>
   <a class="t" href="#/trainings"><span class="arrow">→</span><b class="lbl">Trainings</b><small>Masterclasses · Executive education · Digicomp</small></a>
-  <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Lab</b><small>Krugozore · Fictional Switzerland</small></a>
+  <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Projects</b><small>Krugozore · Fictional Switzerland</small></a>
   <a class="c" href="#/social"><span class="arrow">→</span><b class="lbl">Talks</b><small>Head of AI Club · conferences</small></a>
   <a class="p" href="#/pubs"><span class="arrow">→</span><b class="lbl">Writing</b><small>Interviews · key posts</small></a>
   <a class="j" href="#/agent">ask my<br><b>AI agent</b><br>→</a>
@@ -153,14 +156,23 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
 
 <!-- LAB -->
 <section id="lab">
-  <h2>Lab</h2>
-  <p class="lead">What I'm building now, as a one-person team with AI agents.</p>
+  <h2>AI Projects</h2>
+  <p class="lead">What I build, mostly as a one-person team with AI agents.</p>
 
   <div class="card"><img src="img/krugozore.png" alt=""><div>
     <div class="chips"><span class="chip">coming to the App Store</span><span class="chip">iPhone · iPad · Mac</span></div>
     <h3>Krugozore</h3>
     <p>Your AI, your data, no gatekeepers. A private AI chat that runs on your own device: no account, no server, no tracking.</p>
     <a class="btn ghost" href="https://inofc.github.io/krugozore-site/">About the app</a>
+  </div></div>
+
+  <div class="card"><img src="img/krugozore.png" alt=""><div>
+    <div class="chips"><span class="chip live">live since 2023</span><span class="chip">Telegram bot</span></div>
+    <h3>Krugozore AI chatbot on Telegram</h3>
+    <p>A general-purpose AI assistant inside Telegram: ask, write, translate and think things through with leading AI models, with nothing to install.</p>
+    <div class="stats"><div><b>110K</b><span>users in total</span></div><div><b>30K</b><span>monthly users at peak</span></div><div><b>1–2K</b><span>monthly users now</span></div><div><b>100–200</b><span>daily users now</span></div></div>
+    <div class="chips tech"><span class="chip">Python</span><span class="chip">virtual machines</span><span class="chip">PostgreSQL</span><span class="chip">multiple LLMs via aggregators and direct provider APIs</span></div>
+    <a class="btn" href="https://t.me/Krugozore_ai_chatbot">Open in Telegram</a>
   </div></div>
 
   <div class="card"><img src="img/fs.png" alt=""><div>
@@ -258,7 +270,7 @@ addEventListener('hashchange',route);route();
 /* demo agent: canned answers, no AI service behind it yet */
 const A={
  trainings:'Nick teaches leaders to put AI to work.\n· Public masterclass: AI agents with Claude and GPT, 11 + 25 Nov online, 28 Nov in Zurich\n· Private Executive programmes\n· Digicomp Academy course\n→ <a href="#/trainings">open Trainings</a>',
- lab:'What Nick is building now:\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open Lab</a>',
+ lab:'Nick\'s AI projects:\n· Krugozore AI chatbot on Telegram, 110K users since 2023\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
  talks:'Next: guest lecture at ETH Zurich, 18 Nov. Recent: .NET Day Switzerland.\nHe also hosts the Head of AI Club Zurich.\n→ <a href="#/social">open Speaking</a>',
  writing:'Two long interviews, plus posts on the atomic AI company and why the model is not your advantage.\n→ <a href="#/pubs">open Writing</a>',
  contact:'Fastest: a LinkedIn message.\n→ <a href="https://www.linkedin.com/in/nickgushchin/">linkedin.com/in/nickgushchin</a>',
