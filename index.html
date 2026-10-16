@@ -71,6 +71,10 @@ details.prev .list{margin-top:10px}
 .a .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .a .chips button{font:600 12px var(--mono);background:transparent;border:1px solid var(--ink);color:var(--ink);padding:4px 9px;cursor:pointer}
 .a .chips button:hover{background:var(--ink);color:var(--yel)}
+.a .out .wait{opacity:.55}.a input:disabled{opacity:.5}
+#ts:not(:empty){margin-top:8px;max-width:100%;overflow:hidden}
+.note{font:12px/1.5 var(--mono);color:var(--ink);border-left:6px solid var(--red);padding:4px 0 4px 10px;margin:-8px 0 16px}
+@media (max-width:640px){.a{padding:14px 12px;border-width:5px}}
 /* ---------- inner pages ---------- */
 .page{display:none}.page.on{display:block}
 .band{height:12px;display:flex}.band i{flex:1}
@@ -110,7 +114,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Projects</b><small>JAI agent · Krugozore · Fictional Switzerland</small></a>
   <a class="c" href="#/social"><span class="arrow">→</span><b class="lbl">Talks</b><small>Head of AI Club · conferences</small></a>
   <a class="p" href="#/pubs"><span class="arrow">→</span><b class="lbl">Writing</b><small>Interviews · key posts</small></a>
-  <a class="j" href="#/agent">ask my<br><b>AI agent</b><br>→</a>
+  <a class="j" href="#/agent">ask JAI's<br><b>twin brother</b><br>→</a>
   <a class="k" href="#/contact"><b>Contact</b></a>
 </div>
 </main>
@@ -163,7 +167,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <div class="chips"><span class="chip live">working every day</span><span class="chip">personal AI agent · OpenClaw</span></div>
     <h3>JAI, my personal AI agent</h3>
     <p>Built on OpenClaw, then transformed and tailored to the way I work. JAI supports me in idea generation, preparation, marketing, coding, testing, communication, family arrangements and much more. It also built and maintains this website.</p>
-    <a class="btn" href="#/agent">Ask JAI (demo)</a>
+    <a class="btn" href="#/agent">Ask JAI's twin brother</a>
   </div></div>
 
   <div class="card"><img src="img/krugozore.png" alt=""><div>
@@ -255,12 +259,14 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <li class="study"><span class="y">2001 – 2006</span><h3>IBI</h3><p>Banking · Management and Anti-crisis Management</p></li>
     <li class="study"><span class="y"></span><h3>Certificates</h3><p>ITIL · management, finance, risk and financial modelling</p></li>
   </ol></section>
-<section id="agent"><h2>Ask my AI agent</h2><p class="lead">A small demo of how I work: an agent that knows what I do and points you to it.</p>
+<section id="agent"><h2>JAI twin brother</h2><p class="lead">Ask about my trainings, AI projects, talks and writing. JAI, my real agent, stays private; his twin brother answers here.</p>
+  <p class="note">It uses free AI models and runs on a free service with limited access. It knows only what's on this site and is not connected to Nick's real assistant.</p>
   <div class="a">
-    <div class="h">Ask Nick's agent</div>
-    <div class="who">jai@nick: ~ (demo)</div>
-    <div class="out" id="out"><span class="q">jai$</span> pick a topic below, or type one</div>
-    <form id="f"><b>jai$</b><input id="in" placeholder="type a question" autocomplete="off"></form>
+    <div class="h">JAI twin brother</div>
+    <div class="who">twin@inofc: ~ (free public demo)</div>
+    <div class="out" id="out"><span class="q">twin$</span> pick a topic below, or type a question</div>
+    <form id="f"><b>twin$</b><input id="in" placeholder="type a question" autocomplete="off" maxlength="500"></form>
+    <div id="ts"></div>
     <div class="chips"><button>trainings</button><button>lab</button><button>talks</button><button>writing</button><button>contact</button></div>
   </div></section>
 <section id="contact"><h2>Contact</h2><p class="lead">18 years in banking, then I started over. Now I build with AI, teach it, and bring it into companies. The fastest way to reach me is LinkedIn.</p><a class="btn" href="https://www.linkedin.com/in/nickgushchin/">Message on LinkedIn</a> <a class="btn ghost" href="https://x.com/nickgushchin">X</a> <a class="btn ghost" href="https://www.youtube.com/@Nick_AI_Builder">YouTube</a> <a class="btn ghost" href="https://t.me/ai_nikolai_channel">Telegram</a></section>
@@ -274,20 +280,48 @@ function route(){const id=location.hash.replace('#/','');const inner=ids.include
  ids.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=s===id?'block':'none'});scrollTo(0,0)}
 const home=document.getElementById('home'),inner_=document.getElementById('inner');
 addEventListener('hashchange',route);route();
-/* demo agent: canned answers, no AI service behind it yet */
+/* JAI twin brother: chips answer instantly from the canned text below; typed questions go to a free,
+   tool-less AI Worker (twin-worker/ in the project folder). If the Worker fails or a limit is hit,
+   the canned answers are the fallback. */
+const TWIN={url:'https://jai-twin.jai-twin.workers.dev/chat',sitekey:'0x4AAAAAAFYsg9vIO3TT2mPi'};
 const A={
  trainings:'Nick teaches leaders to put AI to work.\n· Public masterclass: AI agents with Claude and GPT, 11 + 25 Nov online, 28 Nov in Zurich\n· Private Executive programmes\n· Digicomp Academy course\n→ <a href="#/trainings">open Trainings</a>',
- lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (that\'s me)\n· Krugozore AI chatbot on Telegram, 110K users since 2023\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
+ lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (my brother; I\'m only his public twin)\n· Krugozore AI chatbot on Telegram, 110K users since 2023\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
  talks:'Next: guest lecture at ETH Zurich, 18 Nov. Recent: .NET Day Switzerland.\nHe also hosts the Head of AI Club Zurich.\n→ <a href="#/social">open Speaking</a>',
  writing:'Two long interviews, plus posts on the atomic AI company and why the model is not your advantage.\n→ <a href="#/pubs">open Writing</a>',
  contact:'Fastest: a LinkedIn message.\n→ <a href="https://www.linkedin.com/in/nickgushchin/">linkedin.com/in/nickgushchin</a>',
  help:'Try: trainings · lab · talks · writing · contact'};
 const K=[['trainings',/train|class|course|teach|workshop|digicomp|book/],['lab',/lab|build|project|app|krugozore|film|switzerland/],['talks',/talk|speak|conference|club|event|lecture/],['writing',/writ|post|article|interview|read/],['contact',/contact|mail|reach|hire|call/]];
-const out=document.getElementById('out');
-function ask(q){const k=(K.find(([,r])=>r.test(q.toLowerCase()))||['help'])[0];
- out.innerHTML+='\n\n<span class="q">jai$ '+q.replace(/[<>&]/g,'')+'</span>\n'+A[k];out.scrollTop=1e6}
-document.querySelectorAll('.a .chips button').forEach(b=>b.onclick=()=>ask(b.textContent));
-document.getElementById('f').onsubmit=e=>{e.preventDefault();const i=document.getElementById('in');if(i.value.trim())ask(i.value.trim());i.value=''};
+const out=document.getElementById('out'),inp=document.getElementById('in');
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const linkify=s=>esc(s).replace(/https:\/\/[^\s)<]+[^\s)<.,;:!?'"]/g,u=>u.startsWith('https://inofc.github.io/#/')?'<a href="'+u.slice(24)+'">'+u+'</a>':'<a href="'+u+'" target="_blank" rel="noopener">'+u+'</a>');
+function show(q,html){out.innerHTML+='\n\n<span class="q">twin$ '+esc(q)+'</span>\n'+html;out.scrollTop=1e6}
+function canned(q){return A[(K.find(([,r])=>r.test(q.toLowerCase()))||['help'])[0]]}
+/* Turnstile: one fresh token per message */
+let wid=null,tokWait=null,tok='';
+function tsInit(){if(!TWIN.url||!TWIN.sitekey||document.getElementById('tsjs'))return;
+ window.tsReady=()=>{wid=turnstile.render('#ts',{sitekey:TWIN.sitekey,action:'twin',appearance:'interaction-only',size:'flexible',
+  callback:t=>{tok=t;if(tokWait){tokWait(t);tokWait=null}},'expired-callback':()=>{tok=''},'error-callback':()=>{tok=''}})};
+ const s=document.createElement('script');s.id='tsjs';s.async=true;s.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=tsReady';document.head.appendChild(s)}
+function token(){if(tok){const t=tok;tok='';return Promise.resolve(t)}
+ return new Promise(r=>{tokWait=r;setTimeout(()=>{if(tokWait===r){tokWait=null;r('')}},20000)})}
+const hist=[];
+async function askAI(q){
+ if(!TWIN.url){show(q,canned(q));return}
+ inp.disabled=true;const wid2='w'+Date.now();show(q,'<span class="wait" id="'+wid2+'">thinking…</span>');
+ let reply='',err='';
+ try{const t=await token();if(!t)throw new Error('turnstile');
+  const r=await fetch(TWIN.url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[...hist.slice(-3),{role:'user',content:q}],token:t})});
+  const j=await r.json().catch(()=>({}));if(r.ok&&j.reply)reply=j.reply;else err=j.error||'error'}
+ catch(e){err=e.message||'error'}
+ finally{if(window.turnstile&&wid!==null)turnstile.reset(wid);inp.disabled=false;inp.focus()}
+ if(reply){hist.push({role:'user',content:q},{role:'assistant',content:reply});hist.splice(0,Math.max(0,hist.length-4));document.getElementById(wid2).outerHTML=linkify(reply)}
+ else{const why=/limit/.test(err)?'(limit reached for now, here is the short version)':err==='busy_today'?'(the free AI allowance for today is used up, here is the short version)':'(the free AI is not available right now, here is the short version)';
+  document.getElementById(wid2).outerHTML='<span class="wait">'+why+'</span>\n'+canned(q)}
+ out.scrollTop=1e6}
+document.querySelectorAll('.a .chips button').forEach(b=>b.onclick=()=>show(b.textContent,canned(b.textContent)));
+document.getElementById('f').onsubmit=e=>{e.preventDefault();const v=inp.value.trim().slice(0,500);inp.value='';if(v&&!inp.disabled)askAI(v)};
+addEventListener('hashchange',()=>{if(location.hash==='#/agent')tsInit()});if(location.hash==='#/agent')tsInit();
 document.querySelectorAll('.tl-f button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tl-f button').forEach(x=>x.classList.toggle('on',x===b));
  document.querySelectorAll('.tl li').forEach(li=>li.classList.toggle('hide',b.dataset.f!=='all'&&!li.classList.contains(b.dataset.f)))});
 </script>
