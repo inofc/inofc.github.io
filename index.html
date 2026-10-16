@@ -42,7 +42,8 @@
  grid-template-rows:auto 1.3fr 1.1fr .8fr;
  grid-template-areas:"n n n k" "t t t t" "l l c c" "p p p j";gap:8px;border-width:8px}
  .m>a,.m>div{padding:14px 16px}.m b.lbl{font-size:26px}.m .k{writing-mode:vertical-rl;transform:rotate(180deg)}}
-.card.yel{border:5px solid var(--yel)}.btn.yel{background:var(--yel);color:var(--ink)}
+.ticks{margin:0 0 12px;padding-left:18px;color:var(--ink);font-size:15px}.ticks li{margin:3px 0}
+.card.red{border:5px solid var(--red)}.card.yel{border:5px solid var(--yel)}.btn.yel{background:var(--yel);color:var(--ink)}
 .card.grn{border:5px solid #1f9d55}.btn.grn{background:#1f9d55;color:#fff}
 details.prev{margin-top:12px}details.prev summary{display:inline-block;cursor:pointer;font:600 13px var(--sans);padding:7px 12px;border:2px solid var(--ink);list-style:none}
 details.prev summary::-webkit-details-marker{display:none}details.prev summary::after{content:" ▾"}details.prev[open] summary::after{content:" ▴"}
@@ -102,7 +103,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <p>4 years in applied AI.<br><b>Building. Transforming. Educating.</b></p>
     <small>My path: work &amp; study</small></div>
   </a>
-  <a class="t" href="#/trainings"><span class="arrow">→</span><b class="lbl">Trainings</b><small>Masterclasses · executive education · Digicomp</small></a>
+  <a class="t" href="#/trainings"><span class="arrow">→</span><b class="lbl">Trainings</b><small>Masterclasses · Executive education · Digicomp</small></a>
   <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Lab</b><small>Krugozore · Fictional Switzerland</small></a>
   <a class="c" href="#/social"><span class="arrow">→</span><b class="lbl">Talks</b><small>Head of AI Club · conferences</small></a>
   <a class="p" href="#/pubs"><span class="arrow">→</span><b class="lbl">Writing</b><small>Interviews · key posts</small></a>
@@ -120,7 +121,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <h2>Trainings</h2>
   <p class="lead">Hands-on and practical. You leave with something that works on Monday.</p>
 
-  <div class="card"><div>
+  <div class="card red"><div>
     <div class="chips"><span class="chip live">open for sign-up</span><span class="chip">public masterclass</span><span class="chip">EN · 3 hours · no coding</span></div>
     <h3>How to set up AI agents with Claude and GPT</h3>
     <p>Build at least one working AI agent on your own use case, live, in three hours.</p>
@@ -136,8 +137,9 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
 
   <div class="card yel"><div>
     <div class="chips"><span class="chip">private</span><span class="chip">one-to-one or small groups</span></div>
-    <h3>Private AI trainings for executives</h3>
-    <p>AI is now a leadership skill, not an IT project. In private sessions, one-to-one or in small groups, I help executives go from curiosity to confident decisions: how AI really works and where it fails, your own AI stack and agents, and how to lead AI across your company. Built around your real cases, at your pace.</p>
+    <h3>Private AI trainings for Executives</h3>
+    <p>For Executives who want to lead AI, not delegate it. One-to-one or in small groups, built around your company:</p>
+    <ul class="ticks"><li>How AI really works, and where it fails</li><li>Your own AI tools and agents, set up and in daily use</li><li>How to bring AI into your company, step by step</li></ul>
     <a class="btn yel" href="https://www.linkedin.com/in/nickgushchin/">Request a private session</a>
   </div></div>
 
@@ -255,7 +257,7 @@ const home=document.getElementById('home'),inner_=document.getElementById('inner
 addEventListener('hashchange',route);route();
 /* demo agent: canned answers, no AI service behind it yet */
 const A={
- trainings:'Nick teaches leaders to put AI to work.\n· Public masterclass: AI agents with Claude and GPT, 11 + 25 Nov online, 28 Nov in Zurich\n· Private executive programmes\n· Digicomp Academy course\n→ <a href="#/trainings">open Trainings</a>',
+ trainings:'Nick teaches leaders to put AI to work.\n· Public masterclass: AI agents with Claude and GPT, 11 + 25 Nov online, 28 Nov in Zurich\n· Private Executive programmes\n· Digicomp Academy course\n→ <a href="#/trainings">open Trainings</a>',
  lab:'What Nick is building now:\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open Lab</a>',
  talks:'Next: guest lecture at ETH Zurich, 18 Nov. Recent: .NET Day Switzerland.\nHe also hosts the Head of AI Club Zurich.\n→ <a href="#/social">open Speaking</a>',
  writing:'Two long interviews, plus posts on the atomic AI company and why the model is not your advantage.\n→ <a href="#/pubs">open Writing</a>',

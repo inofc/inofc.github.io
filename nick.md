@@ -4,7 +4,7 @@ Applied AI practitioner in Zurich. 18 years in international banking, then start
 
 ## Trainings
 - Public masterclass "How to set up AI agents with Claude and GPT" (EN, 3 h, no coding): Wed 11 Nov and Wed 25 Nov 2026 online, Sat 28 Nov 2026 in Zurich. Sign up on Eventfrog.
-- Private AI programmes for executives and leadership teams (1:1, small groups, in-house lectures for 3–15).
+- Private AI programmes for Executives and leadership teams (1:1, small groups, in-house lectures for 3–15).
 - Digicomp Academy: "IT Service Management und GenAI" (DE, 2 days), next run 10–17 Dec 2026.
 
 ## Lab
