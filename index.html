@@ -60,6 +60,7 @@ details.prev .list{margin-top:10px}
 .stats-pub{margin-top:22px;border:4px solid var(--ink);background:#fff;padding:14px 16px}.stats-pub h3{margin:0 0 10px;font:700 16px var(--sans)}.stats-pub small{font:12px var(--mono);color:var(--mut);font-weight:400}
 .bars .row{display:grid;grid-template-columns:92px 1fr 34px;gap:8px;align-items:center;margin:5px 0;font:12px var(--mono)}.bars .bar{height:14px;background:var(--blue)}.bars .row:nth-child(3n+2) .bar{background:var(--red)}.bars .row:nth-child(3n) .bar{background:var(--yel)}.bars .n{text-align:right}
 .big{font:800 30px var(--sans)}.big small{font:12px var(--mono)}
+.mini{font:12px var(--mono)!important;color:var(--mut);margin:2px 0 8px!important}.card.fs .logos{display:flex;gap:8px;margin-bottom:10px}.card.fs .logos img{width:64px;height:64px;border-radius:12px}
 /* timeline */
 .tl-f{display:flex;gap:6px;margin:4px 0 18px}.tl-f button{font:600 12px var(--mono);border:2px solid var(--ink);background:#fff;padding:5px 10px;cursor:pointer}
 .tl-f button.on{background:var(--ink);color:#fff}
@@ -118,11 +119,10 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <a class="n" href="#/about"><span class="arrow">→</span>
     <img src="img/nick.jpg" alt="Nick Gushchin">
     <div><h1>Nick<br><span>Gushchin</span></h1>
-    <p>4 years in applied AI.<br><b>Building. Transforming. Educating.</b></p>
-    <small>My path: work &amp; study</small></div>
+    <p>4 years in applied AI.<br><b>Building. Transforming. Educating.</b></p></div>
   </a>
   <a class="t" href="#/trainings"><span class="arrow">→</span><b class="lbl">Trainings</b><small>Masterclasses · Executive education · Digicomp</small></a>
-  <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Projects</b><small>JAI agent · Krugozore · Fictional Switzerland</small></a>
+  <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Projects</b><small>JAI agent · Krugozore · GAF · Knight Duel · Fictional Switzerland</small></a>
   <a class="c" href="#/social"><span class="arrow">→</span><b class="lbl">Talks</b><small>Head of AI Club · conferences</small></a>
   <a class="p" href="#/pubs"><span class="arrow">→</span><b class="lbl">Insights</b><small>Interviews · key posts</small></a>
   <a class="j" href="#/agent">ask<br><b>T.JAI</b><br>JAI's twin →</a>
@@ -182,29 +182,51 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   </div></div>
 
   <div class="card"><img src="img/krugozore.png" alt=""><div>
-    <div class="chips"><span class="chip">coming to the App Store</span><span class="chip">iPhone · iPad · Mac</span></div>
-    <h3>Krugozore</h3>
-    <p>Your AI, your data, no gatekeepers. A private AI chat that runs on your own device: no account, no server, no tracking.</p>
+    <div class="chips"><span class="chip">coming soon</span><span class="chip">in development since summer 2026</span></div>
+    <h3>Krugozore, iOS app for iPhone, iPad and Mac</h3>
+    <p>AI that runs locally on your device: no services in between and no cloud copy of your data. It gives you access to free local models and to cloud models when you choose them.</p>
     <a class="btn ghost" href="https://inofc.github.io/krugozore-site/">About the app</a>
   </div></div>
 
   <div class="card"><img src="img/krugozore.png" alt=""><div>
     <div class="chips"><span class="chip live">live since 2023</span><span class="chip">Telegram bot</span></div>
-    <h3>Krugozore AI chatbot on Telegram</h3>
+    <h3>Krugozore GPT AI chatbot on Telegram</h3>
     <p>A general-purpose AI assistant inside Telegram: ask, write, translate and think things through with leading AI models, with nothing to install.</p>
-    <div class="stats"><div><b>110K</b><span>users in total</span></div><div><b>30K</b><span>monthly users at peak</span></div><div><b>1–2K</b><span>monthly users now</span></div><div><b>100–200</b><span>daily users now</span></div></div>
+    <p class="mini">110K users in total · 30K monthly users at peak · now 1–2K monthly and 100–200 daily users</p>
     <div class="chips tech"><span class="chip">Python</span><span class="chip">virtual machines</span><span class="chip">PostgreSQL</span><span class="chip">multiple LLMs via aggregators and direct provider APIs</span></div>
     <a class="btn" href="https://t.me/Krugozore_ai_chatbot">Open in Telegram</a>
   </div></div>
 
-  <div class="card"><img src="img/fs.png" alt=""><div>
-    <div class="chips"><span class="chip live">new film every Thursday</span><span class="chip">EN + Swiss German</span></div>
+  <div class="card"><img src="img/gaf.jpg" alt="Mr. G.A.F."><div>
+    <div class="chips"><span class="chip live">open source</span><span class="chip">AI skill</span></div>
+    <h3>GAF, Generative AI Factory</h3>
+    <p>An open-source skill for setting up your own AI factory for building digital products: your community proposes ideas, scheduled AI roles review them, build the winners and ship. Tested in Knight Duel and the Krugozore iOS app.</p>
+    <a class="btn" href="https://gaf-site.vercel.app">Meet Mr. G.A.F.</a>
+    <a class="btn ghost" href="https://github.com/inofc/gaf">GitHub</a>
+  </div></div>
+
+  <div class="card"><img src="img/knightduel.jpg" alt="Knight Duel"><div>
+    <div class="chips"><span class="chip">experimental</span><span class="chip">web game</span></div>
+    <h3>Knight Duel</h3>
+    <p>A small web game whose development is fully powered by an autonomous agentic AI factory: players suggest, AI agents build and ship.</p>
+    <a class="btn" href="https://knight-duel.vercel.app">Play Knight Duel</a>
+  </div></div>
+
+  <div class="card fs"><div>
+    <div class="logos"><img src="img/fs-en.jpg" alt="Fictional Switzerland"><img src="img/fs-de.jpg" alt="Erfundeni Schwiiz"></div>
+    <div class="chips"><span class="chip live">live since Oct 2026</span><span class="chip">in development 2026</span><span class="chip">weekly · EN + DE</span></div>
     <h3>Fictional Switzerland · Erfundeni Schwiiz</h3>
-    <p>Not many people know where Swissness comes from. So we imagined it. Short, slightly crazy documentaries, told with humour, made with a little AI.</p>
-    <a class="btn" href="https://www.youtube.com/@fictionalswitzerland">YouTube EN</a>
-    <a class="btn" href="https://www.youtube.com/@erfundenischwiiz">YouTube DE</a>
+    <p>An experimental faceless media project, fully powered by agentic AI systems and workflows, from development to publishing. Made with big love for my home, Switzerland: weekly stories in English and German that tell fictional tales about real, key elements of Swissness, and what makes this country Swiss.</p>
+    <p class="mini"><b>EN</b> · Fictional Switzerland</p>
+    <a class="btn" href="https://www.youtube.com/@fictionalswitzerland">YouTube</a>
     <a class="btn ghost" href="https://www.instagram.com/fictionalswitzerland/">Instagram</a>
     <a class="btn ghost" href="https://www.tiktok.com/@fictionalswitzerland01">TikTok</a>
+    <a class="btn ghost" href="https://x.com/FictionalSwiss">X</a>
+    <p class="mini" style="margin-top:10px"><b>DE</b> · Erfundeni Schwiiz</p>
+    <a class="btn" href="https://www.youtube.com/@erfundenischwiiz">YouTube</a>
+    <a class="btn ghost" href="https://www.instagram.com/erfundenischwiiz/">Instagram</a>
+    <a class="btn ghost" href="https://www.tiktok.com/@erfundenischwiiz">TikTok</a>
+    <a class="btn ghost" href="https://x.com/ErfundeniSwiss">X</a>
   </div></div>
 </section>
 
@@ -313,7 +335,7 @@ addEventListener('hashchange',route);route();
 const TWIN={url:'https://jai-twin.jai-twin.workers.dev/chat',sitekey:'0x4AAAAAAFYsg9vIO3TT2mPi'};
 const A={
  trainings:'Nick teaches leaders to put AI to work.\n· Public masterclass: AI agents with Claude and GPT, 11 + 25 Nov online, 28 Nov in Zurich\n· Private Executive programmes\n· Digicomp Academy course\n→ <a href="#/trainings">open Trainings</a>',
- lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (my brother; I\'m T.JAI, his public twin)\n· Krugozore AI chatbot on Telegram, 110K users since 2023\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
+ lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (my brother; I\'m T.JAI, his public twin)\n· Krugozore iOS app, local AI on your device (coming soon)\n· Krugozore GPT chatbot on Telegram, 110K users since 2023\n· GAF, open-source Generative AI Factory skill\n· Knight Duel, a web game built by an AI factory\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
  talks:'Next: guest lecture at ETH Zurich, 18 Nov. Recent: .NET Day Switzerland.\nHe also hosts the Head of AI Club Zurich.\n→ <a href="#/social">open Speaking</a>',
  writing:'Two long interviews, plus posts on the atomic AI company and why the model is not your advantage.\n→ <a href="#/pubs">open Insights</a>',
  contact:'Fastest: a LinkedIn message.\n→ <a href="https://www.linkedin.com/in/nickgushchin/">linkedin.com/in/nickgushchin</a>',
