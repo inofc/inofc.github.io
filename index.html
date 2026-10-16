@@ -107,7 +107,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <small>My path: work &amp; study</small></div>
   </a>
   <a class="t" href="#/trainings"><span class="arrow">→</span><b class="lbl">Trainings</b><small>Masterclasses · Executive education · Digicomp</small></a>
-  <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Projects</b><small>Krugozore · Fictional Switzerland</small></a>
+  <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Projects</b><small>JAI agent · Krugozore · Fictional Switzerland</small></a>
   <a class="c" href="#/social"><span class="arrow">→</span><b class="lbl">Talks</b><small>Head of AI Club · conferences</small></a>
   <a class="p" href="#/pubs"><span class="arrow">→</span><b class="lbl">Writing</b><small>Interviews · key posts</small></a>
   <a class="j" href="#/agent">ask my<br><b>AI agent</b><br>→</a>
@@ -157,7 +157,14 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
 <!-- LAB -->
 <section id="lab">
   <h2>AI Projects</h2>
-  <p class="lead">What I build, mostly as a one-person team with AI agents.</p>
+  <p class="lead">For many years I've been fascinated by one idea: AI that helps people grow. These are the projects where I put it to work. I could not have achieved so much without my AI agents.</p>
+
+  <div class="card"><img src="img/jai.jpg" alt="JAI"><div>
+    <div class="chips"><span class="chip live">working every day</span><span class="chip">personal AI agent · OpenClaw</span></div>
+    <h3>JAI, my personal AI agent</h3>
+    <p>Built on OpenClaw, then transformed and tailored to the way I work. JAI supports me in idea generation, preparation, marketing, coding, testing, communication, family arrangements and much more. It also built and maintains this website.</p>
+    <a class="btn" href="#/agent">Ask JAI (demo)</a>
+  </div></div>
 
   <div class="card"><img src="img/krugozore.png" alt=""><div>
     <div class="chips"><span class="chip">coming to the App Store</span><span class="chip">iPhone · iPad · Mac</span></div>
@@ -270,7 +277,7 @@ addEventListener('hashchange',route);route();
 /* demo agent: canned answers, no AI service behind it yet */
 const A={
  trainings:'Nick teaches leaders to put AI to work.\n· Public masterclass: AI agents with Claude and GPT, 11 + 25 Nov online, 28 Nov in Zurich\n· Private Executive programmes\n· Digicomp Academy course\n→ <a href="#/trainings">open Trainings</a>',
- lab:'Nick\'s AI projects:\n· Krugozore AI chatbot on Telegram, 110K users since 2023\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
+ lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (that\'s me)\n· Krugozore AI chatbot on Telegram, 110K users since 2023\n· Krugozore, a private on-device AI chat (coming to the App Store)\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
  talks:'Next: guest lecture at ETH Zurich, 18 Nov. Recent: .NET Day Switzerland.\nHe also hosts the Head of AI Club Zurich.\n→ <a href="#/social">open Speaking</a>',
  writing:'Two long interviews, plus posts on the atomic AI company and why the model is not your advantage.\n→ <a href="#/pubs">open Writing</a>',
  contact:'Fastest: a LinkedIn message.\n→ <a href="https://www.linkedin.com/in/nickgushchin/">linkedin.com/in/nickgushchin</a>',

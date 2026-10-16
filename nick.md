@@ -8,6 +8,7 @@ Applied AI practitioner in Zurich. 18 years in international banking, then start
 - Digicomp Academy: "IT Service Management und GenAI" (DE, 2 days), next run 10–17 Dec 2026.
 
 ## AI Projects
+- JAI: personal AI agent built on OpenClaw, tailored to Nick's work (ideas, preparation, marketing, coding, testing, communication, family arrangements). Maintains this site.
 - Krugozore AI chatbot on Telegram (since 2023): 110K users in total, 30K monthly at peak, now 1–2K monthly and 100–200 daily. Python, PostgreSQL, multiple LLMs. https://t.me/Krugozore_ai_chatbot
 - Krugozore: private on-device AI chat for iPhone, iPad and Mac (coming to the App Store).
 - Fictional Switzerland / Erfundeni Schwiiz: weekly AI mock-documentary series, EN + Swiss German.
