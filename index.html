@@ -285,7 +285,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <p><b>What we keep.</b> Only an anonymous counter per day to enforce the limits: a one-way hash of your IP address, deleted automatically after 48 hours. No names, no email addresses, no chat history, no profiles.</p>
     <p><b>Cookies.</b> This site sets no cookies of its own and uses no analytics or tracking. The human check (Cloudflare Turnstile) loads only on this page and may use cookies or local storage to tell humans from bots. The topic buttons work without it.</p>
     <p><b>Third parties.</b> The site is hosted on GitHub Pages and the chat runs on Cloudflare. Both process technical data such as your IP address under their own policies: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>.</p>
-    <p><b>What we count, publicly.</b> For each AI question we add 1 to a topic tally (for example "trainings" or "projects"); the question itself is never saved. Page visits are counted the same way: date, the section opened first and the type of site you came from (for example LinkedIn), without IP address or cookies. The totals are shown openly below and on the Contact &amp; About page.</p>
+    <p><b>What we count, publicly.</b> For each AI question and each topic button you tap we add 1 to a topic tally (for example "trainings" or "projects"); the question itself is never saved. Page visits are counted the same way: date, the section opened first and the type of site you came from (for example LinkedIn), without IP address or cookies. The totals are shown openly below and on the Contact &amp; About page.</p>
     <p><b>Please don't share</b> personal, confidential or sensitive information in the chat.</p>
     <p><b>Disclaimer.</b> T.JAI is an experimental demo. Answers are generated automatically by AI and may be incomplete, outdated or wrong. They are not professional, legal, financial or other advice and are not offers or commitments by Nick Gushchin. For anything that matters, check the site pages or contact Nick on LinkedIn. To the extent permitted by law, no liability is accepted for the answers or for the availability of this service.</p>
   </details>
@@ -353,7 +353,7 @@ async function askAI(q){
   document.getElementById(wid2).outerHTML='<span class="wait">'+why+'</span>\n'+canned(q)}
  if(err==='busy_today')closeChat('today');else if(err==='daily_limit')closeChat('me');
  out.scrollTop=1e6}
-document.querySelectorAll('.a .chips button').forEach(b=>b.onclick=()=>show(b.textContent,canned(b.textContent)));
+document.querySelectorAll('.a .chips button').forEach(b=>b.onclick=()=>{show(b.textContent,canned(b.textContent));try{fetch(TWIN.url.replace('/chat','/tap'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:b.textContent}),keepalive:true}).then(()=>{statsLoaded=false;loadStats()})}catch(e){}});
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const v=inp.value.trim().slice(0,500);inp.value='';if(v&&!inp.disabled)askAI(v)};
 addEventListener('hashchange',()=>{if(location.hash==='#/agent'){tsInit();loadQuota()}});if(location.hash==='#/agent'){tsInit();loadQuota()}
 
@@ -366,7 +366,7 @@ function bars(el,obj){const e=Object.entries(obj||{}).sort((a,b)=>b[1]-a[1]);if(
  const m=e[0][1];el.innerHTML=e.map(([k,v])=>'<div class="row"><span>'+(LABEL[k]||k)+'</span><div class="bar" style="width:'+Math.max(4,Math.round(v/m*100))+'%"></div><span class="n">'+v+'</span></div>').join('')}
 let statsLoaded=false;
 function loadStats(){if(statsLoaded)return;statsLoaded=true;fetch(SBASE+'/stats').then(r=>r.json()).then(j=>{
- bars(document.getElementById('tbars'),j.topics);if(j.questions)document.querySelector('#tstats small').textContent='last 30 days · '+j.questions+' questions';
+ bars(document.getElementById('tbars'),j.topics);if(j.questions)document.querySelector('#tstats small').textContent='last 30 days · '+j.questions+' questions and topic taps';
  document.getElementById('vnums').innerHTML='<span class="big">'+j.visits+'</span> <small>visits · '+j.today_visits+' today</small><p style="margin:10px 0 4px;font:12px var(--mono)">Where visitors come from</p>';
  bars(document.getElementById('vsrc'),j.sources)}).catch(()=>{statsLoaded=false})}
 try{fetch(SBASE+'/hit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:(location.hash.replace('#/','')||'home'),ref:document.referrer||''}),keepalive:true})}catch(e){}
