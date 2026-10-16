@@ -17,7 +17,7 @@ Applied AI practitioner in Zurich. 18 years in international banking, then start
 - Head of AI Club Zurich, founder and host (invitation only).
 - ETH Zurich guest lecture, 18 Nov 2026. .NET Day Switzerland, 25 Aug 2026: "How Not to Fail with AI".
 
-## Writing
+## Insights
 - Interviews: Sander Recommends (2026), Beyond Coding Podcast #177.
 - Key ideas: the atomic AI company; the model is not your advantage; tools vs. skills.
 
