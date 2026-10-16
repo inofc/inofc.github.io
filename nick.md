@@ -14,6 +14,7 @@ Applied AI practitioner in Zurich. 18 years in international banking, then start
 - GAF, Generative AI Factory: open-source skill for setting up your own AI factory for building digital products (community ideas reviewed, built and shipped by scheduled AI roles). Tested in Knight Duel and the Krugozore iOS app. https://gaf-site.vercel.app · https://github.com/inofc/gaf
 - Knight Duel: experimental web game whose development is fully powered by an autonomous agentic AI factory. https://knight-duel.vercel.app
 - Fictional Switzerland / Erfundeni Schwiiz: experimental faceless media project fully powered by agentic AI systems and workflows, from development to publishing; weekly stories in EN and DE with fictional tales about real, key elements of Swissness. In development 2026, live since Oct 2026. EN: YouTube @fictionalswitzerland, Instagram fictionalswitzerland, TikTok @fictionalswitzerland01, X @FictionalSwiss. DE: YouTube @erfundenischwiiz, Instagram erfundenischwiiz, TikTok @erfundenischwiiz, X @ErfundeniSwiss.
+- Earlier projects: 20+ AI projects built or co-founded in the last 4 years, incl. Swiss AI Chatbot Factory, a media news aggregator, English-language Swiss news for expats, an AI tutor for kids, an AI palm reader, web games, a football fans' social network (alpha), an AI competitor analyst for banks. All worked well technically; some were sold, others stopped for lack of client demand; each added skills and experience.
 
 ## Speaking
 - Head of AI Club Zurich, founder and host (invitation only).
