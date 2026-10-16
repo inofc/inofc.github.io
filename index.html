@@ -70,6 +70,7 @@ details.prev .list{margin-top:10px}
 .a input{flex:1;border:0;background:transparent;font:13px var(--mono);color:var(--ink);outline:none}
 .a .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .a .chips button{font:600 12px var(--mono);background:transparent;border:1px solid var(--ink);color:var(--ink);padding:4px 9px;cursor:pointer}
+.a .quota{font:12px var(--mono);opacity:.75;margin-top:8px}.a .closed{margin-top:8px;padding:8px 10px;border:2px solid var(--ink);background:#fff8d6;font:13px/1.4 var(--mono)}
 .a .chips button:hover{background:var(--ink);color:var(--yel)}
 .a .out .wait{opacity:.55}.a input:disabled{opacity:.5}
 #ts:not(:empty){margin-top:8px;max-width:100%;overflow:hidden}
@@ -267,6 +268,8 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <div class="out" id="out"><span class="q">twin$</span> pick a topic below, or type a question</div>
     <form id="f"><b>twin$</b><input id="in" placeholder="type a question" autocomplete="off" maxlength="500"></form>
     <div id="ts"></div>
+    <div class="quota" id="quota">AI questions left today: …</div>
+    <div class="closed" id="closed" hidden></div>
     <div class="chips"><button>trainings</button><button>projects</button><button>talks</button><button>writing</button><button>contact</button></div>
   </div></section>
 <section id="contact"><h2>Contact</h2><p class="lead">18 years in banking, then I started over. Now I build with AI, teach it, and bring it into companies. The fastest way to reach me is LinkedIn.</p><a class="btn" href="https://www.linkedin.com/in/nickgushchin/">Message on LinkedIn</a> <a class="btn ghost" href="https://x.com/nickgushchin">X</a> <a class="btn ghost" href="https://www.youtube.com/@Nick_AI_Builder">YouTube</a> <a class="btn ghost" href="https://t.me/ai_nikolai_channel">Telegram</a></section>
@@ -290,7 +293,7 @@ const A={
  talks:'Next: guest lecture at ETH Zurich, 18 Nov. Recent: .NET Day Switzerland.\nHe also hosts the Head of AI Club Zurich.\n→ <a href="#/social">open Speaking</a>',
  writing:'Two long interviews, plus posts on the atomic AI company and why the model is not your advantage.\n→ <a href="#/pubs">open Writing</a>',
  contact:'Fastest: a LinkedIn message.\n→ <a href="https://www.linkedin.com/in/nickgushchin/">linkedin.com/in/nickgushchin</a>',
- help:'Try: trainings · lab · talks · writing · contact'};
+ help:'Try: trainings · projects · talks · writing · contact'};
 const K=[['trainings',/train|class|course|teach|workshop|digicomp|book/],['lab',/lab|build|project|app|krugozore|film|switzerland/],['talks',/talk|speak|conference|club|event|lecture/],['writing',/writ|post|article|interview|read/],['contact',/contact|mail|reach|hire|call/]];
 const out=document.getElementById('out'),inp=document.getElementById('in');
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -305,6 +308,12 @@ function tsInit(){if(!TWIN.url||!TWIN.sitekey||document.getElementById('tsjs'))r
  const s=document.createElement('script');s.id='tsjs';s.async=true;s.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=tsReady';document.head.appendChild(s)}
 function token(){if(tok){const t=tok;tok='';return Promise.resolve(t)}
  return new Promise(r=>{tokWait=r;setTimeout(()=>{if(tokWait===r){tokWait=null;r('')}},20000)})}
+const qEl=document.getElementById('quota'),cEl=document.getElementById('closed'),fEl=document.getElementById('f');
+function setQuota(j){if(!j||typeof j.left_today!=='number')return;qEl.textContent='AI questions left today: '+j.left_today+' of '+j.cap;if(j.closed)closeChat('today')}
+function closeChat(kind){fEl.hidden=true;qEl.hidden=kind==='today';cEl.hidden=false;
+ cEl.textContent=kind==='today'?'The AI chat is resting for today: the free daily allowance is used up. Keep exploring with the topic buttons below, they always work. Back tomorrow.'
+ :'You have reached your question limit for today. Keep exploring with the topic buttons below, they always work.'}
+function loadQuota(){if(!TWIN.url)return;fetch(TWIN.url.replace('/chat','/quota')).then(r=>r.json()).then(setQuota).catch(()=>{qEl.hidden=true})}
 const hist=[];
 async function askAI(q){
  if(!TWIN.url){show(q,canned(q));return}
@@ -312,16 +321,17 @@ async function askAI(q){
  let reply='',err='';
  try{const t=await token();if(!t)throw new Error('turnstile');
   const r=await fetch(TWIN.url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[...hist.slice(-3),{role:'user',content:q}],token:t})});
-  const j=await r.json().catch(()=>({}));if(r.ok&&j.reply)reply=j.reply;else err=j.error||'error'}
+  const j=await r.json().catch(()=>({}));setQuota(j);if(r.ok&&j.reply)reply=j.reply;else err=j.error||'error'}
  catch(e){err=e.message||'error'}
  finally{if(window.turnstile&&wid!==null)turnstile.reset(wid);inp.disabled=false;inp.focus()}
  if(reply){hist.push({role:'user',content:q},{role:'assistant',content:reply});hist.splice(0,Math.max(0,hist.length-4));document.getElementById(wid2).outerHTML=linkify(reply)}
  else{const why=/limit/.test(err)?'(limit reached for now, here is the short version)':err==='busy_today'?'(the free AI allowance for today is used up, here is the short version)':'(the free AI is not available right now, here is the short version)';
   document.getElementById(wid2).outerHTML='<span class="wait">'+why+'</span>\n'+canned(q)}
+ if(err==='busy_today')closeChat('today');else if(err==='daily_limit')closeChat('me');
  out.scrollTop=1e6}
 document.querySelectorAll('.a .chips button').forEach(b=>b.onclick=()=>show(b.textContent,canned(b.textContent)));
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const v=inp.value.trim().slice(0,500);inp.value='';if(v&&!inp.disabled)askAI(v)};
-addEventListener('hashchange',()=>{if(location.hash==='#/agent')tsInit()});if(location.hash==='#/agent')tsInit();
+addEventListener('hashchange',()=>{if(location.hash==='#/agent'){tsInit();loadQuota()}});if(location.hash==='#/agent'){tsInit();loadQuota()}
 document.querySelectorAll('.tl-f button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tl-f button').forEach(x=>x.classList.toggle('on',x===b));
  document.querySelectorAll('.tl li').forEach(li=>li.classList.toggle('hide',b.dataset.f!=='all'&&!li.classList.contains(b.dataset.f)))});
 </script>
