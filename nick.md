@@ -6,6 +6,7 @@ Applied AI practitioner in Zurich. 18 years in international banking, then start
 - Public masterclass "How to set up AI agents with Claude and GPT" (EN, 3 h, no coding): Wed 11 Nov and Wed 25 Nov 2026 online, Sat 28 Nov 2026 in Zurich. Sign up on Eventfrog.
 - Private AI programmes for Executives and leadership teams (1:1, small groups, in-house lectures for 3–15).
 - Digicomp Academy: "IT Service Management und GenAI" (DE, 2 days), next run 10–17 Dec 2026.
+- Private AI trainings for Executives: from CHF 250 per hour (private sessions); formats and prices in the overview PDF https://inofc.github.io/docs/Nick-Gushchin_AI-for-Executives.pdf
 
 ## AI Projects
 - JAI: personal AI agent built on OpenClaw, tailored to Nick's work (ideas, preparation, marketing, coding, testing, communication, family arrangements). Maintains this site.
