@@ -39,6 +39,15 @@
  grid-template-rows:auto 1.3fr 1.1fr .8fr;
  grid-template-areas:"n n n k" "t t t t" "l l c c" "p p p j";gap:8px;border-width:8px}
  .m>a,.m>div{padding:14px 16px}.m b.lbl{font-size:26px}.m .k{writing-mode:vertical-rl;transform:rotate(180deg)}}
+/* timeline */
+.tl-f{display:flex;gap:6px;margin:4px 0 18px}.tl-f button{font:600 12px var(--mono);border:2px solid var(--ink);background:#fff;padding:5px 10px;cursor:pointer}
+.tl-f button.on{background:var(--ink);color:#fff}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;padding:0 0 22px 14px}
+.tl li::before{content:"";position:absolute;left:-33px;top:4px;width:18px;height:18px;border:4px solid var(--ink);background:var(--c,#fff)}
+.tl li.work{--c:var(--red)}.tl li.study{--c:var(--blue)}.tl li.build{--c:var(--yel)}
+.tl .y{font:12px var(--mono);color:var(--mut)}.tl h3{margin:2px 0}.tl p{margin:2px 0 0;color:var(--mut);font-size:15px}
+.tl li.hide{display:none}
 /* agent terminal (own page) */
 .a{background:var(--yel);font:13px/1.5 var(--mono);padding:18px 20px;display:flex;flex-direction:column;min-height:360px;border:6px solid var(--ink)}
 .a .h{font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:8px}
@@ -79,11 +88,12 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
 
 <main id="home" class="page on">
 <div class="m">
-  <div class="n">
+  <a class="n" href="#/about"><span class="arrow">→</span>
     <img src="img/nick.jpg" alt="Nick Gushchin">
     <div><h1>Nick<br><span>Gushchin</span></h1>
-    <p>18 years in banking, then I started over. Now I build with AI, teach it, and bring it into companies.</p></div>
-  </div>
+    <p>18 years in banking, then I started over. Now I build with AI, teach it, and bring it into companies.</p>
+    <small>My path: work &amp; study</small></div>
+  </a>
   <a class="t" href="#/trainings"><span class="arrow">→</span><b class="lbl">Trainings</b><small>Masterclasses · executive education · Digicomp</small></a>
   <a class="l" href="#/lab"><span class="arrow">→</span><b class="lbl">AI Lab</b><small>Krugozore · Fictional Switzerland</small></a>
   <a class="c" href="#/social"><span class="arrow">→</span><b class="lbl">Talks</b><small>Head of AI Club · conferences</small></a>
@@ -193,6 +203,24 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <p style="margin-top:16px"><a class="btn ghost" href="https://t.me/ai_nikolai_channel">Telegram (EN)</a> <a class="btn ghost" href="https://t.me/gushin_pro">Telegram (RU)</a> <a class="btn ghost" href="https://x.com/nickgushchin">X</a></p>
 </section>
 
+<section id="about"><h2>My path</h2><p class="lead">Where I worked, where I learned, and what I built along the way.</p>
+  <div class="tl-f"><button class="on" data-f="all">All</button><button data-f="work">Work</button><button data-f="study">Study</button><button data-f="build">Built</button></div>
+  <ol class="tl">
+    <li class="study"><span class="y">2026 – 2027</span><h3>CAS in AI, Data and Machine Learning</h3><p>ETH Zurich, Department of Computer Science.</p></li>
+    <li class="work"><span class="y">Mar 2026 –</span><h3>Mentor, Young AI Leaders Zurich Hub</h3><p>Part of the UN ITU "AI for Good" initiative. Helping early-stage AI talent turn ideas into something real.</p></li>
+    <li class="work"><span class="y">Dec 2025 –</span><h3>AI Transformation Manager, SFS Group</h3><p>Taking AI from pilots to production in a Swiss industrial group.</p></li>
+    <li class="work"><span class="y">Nov 2025 –</span><h3>Applied AI Lecturer and Trainer, Digicomp Academy</h3><p>Hands-on programmes on building agentic AI systems, starting with ITSM AI agents.</p></li>
+    <li class="work"><span class="y">Aug 2024 –</span><h3>Chief AI Advisor, CloEE (part-time)</h3><p>Generative AI for discrete manufacturing: real-time machine data, efficiency and lower emissions.</p></li>
+    <li class="build"><span class="y">Jul 2024 – Aug 2026</span><h3>Co-founder, Swiss AI Chatbot Factory</h3><p>An autonomous platform that builds a website chatbot from a URL in three minutes.</p></li>
+    <li class="build"><span class="y">Jun 2024 –</span><h3>Curator, Head of AI Club Zurich</h3><p>Private roundtable for the people who run AI inside their companies.</p></li>
+    <li class="work"><span class="y">2024</span><h3>GenAI Manager, Capco (contract)</h3><p>AI strategy and governance for banks in Switzerland and Germany.</p></li>
+    <li class="build"><span class="y">Aug 2023 – Dec 2025</span><h3>Founder, AI Dev Center</h3><p>15 GenAI tools and agents, including a Telegram GPT chatbot with 100K users.</p></li>
+    <li class="work"><span class="y">2022 – 2023</span><h3>Advisor to the Board, MD for Tech and Business Efficiency, Eurasian Development Bank</h3><p>Banking technology and efficiency projects.</p></li>
+    <li class="work"><span class="y">2006 – 2022</span><h3>International Corporate Business, a large technology bank</h3><p>16 years in international corporate banking and trade finance.</p></li>
+    <li class="study"><span class="y">2017 – 2018</span><h3>Executive MBA, London Business School</h3><p>Banking, corporate finance and securities law.</p></li>
+    <li class="study"><span class="y">2006 – 2008</span><h3>MBA in Finance, Stockholm University</h3></li>
+    <li class="study"><span class="y"></span><h3>Executive education</h3><p>Effective Management, University of Chicago Booth. Independent Director, Institute of Directors (IoD).</p></li>
+  </ol></section>
 <section id="agent"><h2>Ask my AI agent</h2><p class="lead">A small demo of how I work: an agent that knows what I do and points you to it.</p>
   <div class="a">
     <div class="h">Ask Nick's agent</div>
@@ -206,7 +234,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
 </div></div>
 
 <script>
-const ids=['trainings','lab','social','pubs','contact','agent'];
+const ids=['trainings','lab','social','pubs','contact','agent','about'];
 function route(){const id=location.hash.replace('#/','');const inner=ids.includes(id);
  home.classList.toggle('on',!inner);inner_.classList.toggle('on',inner);
  ids.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=s===id?'block':'none'});scrollTo(0,0)}
@@ -226,6 +254,8 @@ function ask(q){const k=(K.find(([,r])=>r.test(q.toLowerCase()))||['help'])[0];
  out.innerHTML+='\n\n<span class="q">jai$ '+q.replace(/[<>&]/g,'')+'</span>\n'+A[k];out.scrollTop=1e6}
 document.querySelectorAll('.a .chips button').forEach(b=>b.onclick=()=>ask(b.textContent));
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const i=document.getElementById('in');if(i.value.trim())ask(i.value.trim());i.value=''};
+document.querySelectorAll('.tl-f button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tl-f button').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.tl li').forEach(li=>li.classList.toggle('hide',b.dataset.f!=='all'&&!li.classList.contains(b.dataset.f)))});
 </script>
 </body>
 </html>
