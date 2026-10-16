@@ -20,7 +20,7 @@ Applied AI practitioner in Zurich. 18 years in international banking, then start
 ## Speaking
 - Head of AI Club Zurich, founder and host (invitation only).
 - ETH Zurich guest lecture, 18 Nov 2026. .NET Day Switzerland, 25 Aug 2026: "How Not to Fail with AI".
-- Talks: ETH Zurich guest lecture 18 Nov 2026 (upcoming); .NET Day Switzerland 2026 "How Not to Fail with AI"; GenAI Zürich 2026 "AI Adoption in a Global Manufacturing Company"; Swiss Testing Day 2026 "Why AI Is Useless for Compliance …and Why You Still Need It"; AgentCon Zurich 2026 and .NET Day 2025 and GenAI Zürich 2025 "Give Work to AI"; Data Conference Switzerland 2025 "From Ticket Chaos to Strategic Efficiency"; Legal Revolution 2025 (Würzburg) panel "When AI Projects Fail"; GenAI Zürich 2024 "How GenAI Can Transform User-Centricity and Content Consumption".
+- Talks: ETH Zurich guest lecture 18 Nov 2026 (upcoming); .NET Day Switzerland 2026 "How Not to Fail with AI"; GenAI Zürich 2026 "AI Adoption in a Global Manufacturing Company"; Swiss Testing Day 2026 "Why AI Is Useless for Compliance …and Why You Still Need It"; AgentCon Zurich 2026 and .NET Day 2025 and GenAI Zürich 2025 "Give Work to AI"; Data Conference Switzerland 2025 "From Ticket Chaos to Strategic Efficiency"; Legal Revolution 2025 (Würzburg) panel "When AI Projects Fail"; Alpine Tech Forum Zurich 2025 speaker; GenAI Zürich 2024 "How GenAI Can Transform User-Centricity and Content Consumption".
 
 ## Insights
 - Interviews: Sander Recommends (2026), Beyond Coding Podcast #177.
