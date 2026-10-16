@@ -42,6 +42,11 @@
  grid-template-rows:auto 1.3fr 1.1fr .8fr;
  grid-template-areas:"n n n k" "t t t t" "l l c c" "p p p j";gap:8px;border-width:8px}
  .m>a,.m>div{padding:14px 16px}.m b.lbl{font-size:26px}.m .k{writing-mode:vertical-rl;transform:rotate(180deg)}}
+.card.yel{border:5px solid var(--yel)}.btn.yel{background:var(--yel);color:var(--ink)}
+.card.grn{border:5px solid #1f9d55}.btn.grn{background:#1f9d55;color:#fff}
+details.prev{margin-top:12px}details.prev summary{display:inline-block;cursor:pointer;font:600 13px var(--sans);padding:7px 12px;border:2px solid var(--ink);list-style:none}
+details.prev summary::-webkit-details-marker{display:none}details.prev summary::after{content:" ▾"}details.prev[open] summary::after{content:" ▴"}
+details.prev .list{margin-top:10px}
 /* timeline */
 .tl-f{display:flex;gap:6px;margin:4px 0 18px}.tl-f button{font:600 12px var(--mono);border:2px solid var(--ink);background:#fff;padding:5px 10px;cursor:pointer}
 .tl-f button.on{background:var(--ink);color:#fff}
@@ -124,20 +129,23 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
       <li><span class="d">Wed 25 Nov</span><span class="t">Online, 17:30–20:30</span><a class="btn red" href="https://eventfrog.ch/en/p/courses-seminars/computer-it/how-to-set-up-ai-agents-with-claude-and-gpt-masterclass-7505355105752889567.html">Sign up</a></li>
       <li><span class="d">Sat 28 Nov</span><span class="t">In person, Zurich, 13:30–16:30</span><a class="btn red" href="https://eventfrog.ch/en/p/courses-seminars/computer-it/how-to-set-up-ai-agents-with-claude-and-gpt-masterclass-7505355318181817441.html">Sign up</a></li>
     </ul>
+    <details class="prev"><summary>Previous masterclasses</summary>
+      <ul class="list"><li><span class="d">21 Mar 2026</span><span class="t">From Banking to AI<small>Zurich, in person</small></span></li></ul>
+    </details>
   </div></div>
 
-  <div class="card"><div>
-    <div class="chips"><span class="chip">private</span><span class="chip">executive education</span></div>
-    <h3>AI for executives and leadership teams</h3>
-    <p>One-to-one or small-group sessions, plus in-house lectures for teams of 3–15. Three tracks: how AI really works and where it fails; your personal AI stack and agents; and AI across the enterprise.</p>
-    <a class="btn ghost" href="#/contact">Ask for a programme</a>
+  <div class="card yel"><div>
+    <div class="chips"><span class="chip">private</span><span class="chip">one-to-one or small groups</span></div>
+    <h3>Private AI trainings for executives</h3>
+    <p>AI is now a leadership skill, not an IT project. In private sessions, one-to-one or in small groups, I help executives go from curiosity to confident decisions: how AI really works and where it fails, your own AI stack and agents, and how to lead AI across your company. Built around your real cases, at your pace.</p>
+    <a class="btn yel" href="https://www.linkedin.com/in/nickgushchin/">Request a private session</a>
   </div></div>
 
-  <div class="card"><div>
-    <div class="chips"><span class="chip">Digicomp Academy</span><span class="chip">DE · 2 days · Zurich or online</span></div>
-    <h3>IT Service Management und GenAI</h3>
-    <p>Day 1: what generative AI changes in IT service management. Day 2: build your own service bots with no-code and low-code tools. Next run: 10–17 Dec 2026.</p>
-    <a class="btn ghost" href="https://digicomp.ch/weiterbildung-it-service-management-itsm/itil/kurs-it-service-management-und-genai">Course page</a>
+  <div class="card grn"><div>
+    <div class="chips"><span class="chip">Digicomp Academy</span><span class="chip">DE · 2 days</span></div>
+    <h3>Agentic AI systems at Digicomp Academy</h3>
+    <p>A 2-day course I teach as part of a CAS: how to plan and build agentic AI systems, with hands-on practice on real service cases. Next run: 10–17 Dec 2026.</p>
+    <a class="btn grn" href="https://digicomp.ch/weiterbildung-it-service-management-itsm/itil/kurs-it-service-management-und-genai">See the course</a>
   </div></div>
 </section>
 
