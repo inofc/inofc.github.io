@@ -70,7 +70,7 @@ details.prev .list{margin-top:10px}
 .a input{flex:1;border:0;background:transparent;font:13px var(--mono);color:var(--ink);outline:none}
 .a .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .a .chips button{font:600 12px var(--mono);background:transparent;border:1px solid var(--ink);color:var(--ink);padding:4px 9px;cursor:pointer}
-[hidden]{display:none!important}.a .quota{font:12px var(--mono);opacity:.75;margin-top:8px}.a .closed{margin-top:8px;padding:8px 10px;border:2px solid var(--ink);background:#fff8d6;font:13px/1.4 var(--mono)}
+[hidden]{display:none!important}.a #ts{margin:8px 0 6px}.a #ts p{margin:0 0 6px;font:12px var(--mono)}.a .quota{font:12px var(--mono);opacity:.75;margin-top:8px}.a .closed{margin-top:8px;padding:8px 10px;border:2px solid var(--ink);background:#fff8d6;font:13px/1.4 var(--mono)}
 .a .chips button:hover{background:var(--ink);color:var(--yel)}
 .a .out .wait{opacity:.55}.a input:disabled{opacity:.5}
 #ts:not(:empty){margin-top:8px;max-width:100%;overflow:hidden}
@@ -266,8 +266,8 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <div class="h">T.JAI · twin brother of JAI</div>
     <div class="who">t.jai@inofc: ~ (free public demo)</div>
     <div class="out" id="out"><span class="q">t.jai$</span> pick a topic below, or type a question</div>
+    <div id="ts" hidden></div>
     <form id="f"><b>t.jai$</b><input id="in" placeholder="type a question" autocomplete="off" maxlength="500"></form>
-    <div id="ts"></div>
     <div class="quota" id="quota">AI questions left today: …</div>
     <div class="closed" id="closed" hidden></div>
     <div class="chips"><button>trainings</button><button>projects</button><button>talks</button><button>writing</button><button>contact</button></div>
@@ -301,10 +301,10 @@ const linkify=s=>esc(s).replace(/https:\/\/[^\s)<]+[^\s)<.,;:!?'"]/g,u=>u.starts
 function show(q,html){out.innerHTML+='\n\n<span class="q">t.jai$ '+esc(q)+'</span>\n'+html;out.scrollTop=1e6}
 function canned(q){return A[(K.find(([,r])=>r.test(q.toLowerCase()))||['help'])[0]]}
 /* Turnstile: one fresh token per message */
-let wid=null,tokWait=null,tok='';
+let wid=null,tokWait=null,tok='';const tsBox=document.getElementById('ts');
 function tsInit(){if(!TWIN.url||!TWIN.sitekey||document.getElementById('tsjs'))return;
  window.tsReady=()=>{wid=turnstile.render('#ts',{sitekey:TWIN.sitekey,action:'twin',appearance:'interaction-only',size:'flexible',
-  callback:t=>{tok=t;if(tokWait){tokWait(t);tokWait=null}},'expired-callback':()=>{tok=''},'error-callback':()=>{tok=''}})};
+  callback:t=>{tok=t;tsBox.hidden=true;if(tokWait){tokWait(t);tokWait=null}},'before-interactive-callback':()=>{tsBox.hidden=false},'after-interactive-callback':()=>{tsBox.hidden=true},'expired-callback':()=>{tok=''},'error-callback':()=>{tok=''}})};
  const s=document.createElement('script');s.id='tsjs';s.async=true;s.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=tsReady';document.head.appendChild(s)}
 function token(){if(tok){const t=tok;tok='';return Promise.resolve(t)}
  return new Promise(r=>{tokWait=r;setTimeout(()=>{if(tokWait===r){tokWait=null;r('')}},20000)})}
@@ -319,13 +319,13 @@ async function askAI(q){
  if(!TWIN.url){show(q,canned(q));return}
  inp.disabled=true;const wid2='w'+Date.now();show(q,'<span class="wait" id="'+wid2+'">thinking…</span>');
  let reply='',err='';
- try{const t=await token();if(!t)throw new Error('turnstile');
+ try{const t=await token();if(!t){document.getElementById(wid2).outerHTML='<span class="wait">Please tick "Verify you are human" just above the input, then send again.</span>';tsBox.hidden=false;inp.value=q;inp.disabled=false;out.scrollTop=1e6;return}
   const r=await fetch(TWIN.url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[...hist.slice(-3),{role:'user',content:q}],token:t})});
   const j=await r.json().catch(()=>({}));setQuota(j);if(r.ok&&j.reply)reply=j.reply;else err=j.error||'error'}
  catch(e){err=e.message||'error'}
  finally{if(window.turnstile&&wid!==null)turnstile.reset(wid);inp.disabled=false;inp.focus()}
  if(reply){hist.push({role:'user',content:q},{role:'assistant',content:reply});hist.splice(0,Math.max(0,hist.length-4));document.getElementById(wid2).outerHTML=linkify(reply)}
- else{const why=/limit/.test(err)?'(limit reached for now, here is the short version)':err==='busy_today'?'(the free AI allowance for today is used up, here is the short version)':'(the free AI is not available right now, here is the short version)';
+ else{const why=err==='turnstile'?'(the human check failed, please tick the box above and try again)':/limit/.test(err)?'(limit reached for now, here is the short version)':err==='busy_today'?'(the free AI allowance for today is used up, here is the short version)':'(the free AI is not available right now, here is the short version)';
   document.getElementById(wid2).outerHTML='<span class="wait">'+why+'</span>\n'+canned(q)}
  if(err==='busy_today')closeChat('today');else if(err==='daily_limit')closeChat('me');
  out.scrollTop=1e6}
