@@ -186,7 +186,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
 <section id="lab">
   <h2>AI Projects</h2>
   <p class="lead">For many years I've been fascinated by one idea: AI that helps people grow. These are the projects where I put it to work. I could not have achieved so much without my AI agents.</p>
-  <div class="tl-f pf" data-g="s"><span class="lbl">Status</span><button class="on" data-f="live">Live</button><button data-f="dev">In development</button><button data-f="ideas">Ideas</button><button data-f="earlier">Earlier</button><button data-f="all">All</button></div>
+  <div class="tl-f pf" data-g="s"><span class="lbl">Status</span><button class="on" data-f="live">Live</button><button class="on" data-f="dev">In development</button><button data-f="ideas">Ideas</button><button data-f="earlier">Earlier</button><button data-f="all">All</button></div>
   <div class="tl-f pf" data-g="p"><span class="lbl">Platform</span><button data-f="apple">Apple</button><button data-f="telegram">Telegram</button><button data-f="web">Web</button><button data-f="video">Video</button><button data-f="agents">AI agents</button><button data-f="opensource">Open source</button><button class="on" data-f="all">All</button></div>
   <p class="none">No projects match this filter yet.</p>
 
@@ -384,7 +384,7 @@ function route(){const id=location.hash.replace('#/','');const inner=ids.include
  ids.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=s===id?'block':'none'});scrollTo(0,0)}
 const home=document.getElementById('home'),inner_=document.getElementById('inner');
 addEventListener('hashchange',route);route();
-(()=>{const F={s:'live',p:'all'};const ap=()=>{let n=0;document.querySelectorAll('#lab .proj').forEach(c=>{const ok=(F.s==='all'||c.dataset.s===F.s)&&(F.p==='all'||c.dataset.p.split(' ').includes(F.p));c.classList.toggle('hide',!ok);n+=ok});document.querySelector('#lab .none').style.display=n?'none':'block'};document.querySelectorAll('.pf button').forEach(b=>b.onclick=()=>{const g=b.parentNode.dataset.g;F[g]=b.dataset.f;b.parentNode.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));ap()});ap()})();
+(()=>{let S=new Set(['live','dev']),P='all';const sb=[...document.querySelectorAll('.pf[data-g=s] button')],pb=[...document.querySelectorAll('.pf[data-g=p] button')];const ap=()=>{sb.forEach(x=>x.classList.toggle('on',S.has(x.dataset.f)));pb.forEach(x=>x.classList.toggle('on',x.dataset.f===P));let n=0;document.querySelectorAll('#lab .proj').forEach(c=>{const ok=(S.has('all')||S.has(c.dataset.s))&&(P==='all'||c.dataset.p.split(' ').includes(P));c.classList.toggle('hide',!ok);n+=ok});document.querySelector('#lab .none').style.display=n?'none':'block'};sb.forEach(b=>b.onclick=()=>{const f=b.dataset.f;if(f==='all')S=new Set(['all']);else{S.delete('all');S.has(f)?S.delete(f):S.add(f);if(!S.size)S.add('all')}ap()});pb.forEach(b=>b.onclick=()=>{P=b.dataset.f;ap()});ap()})();
 /* JAI twin brother: chips answer instantly from the canned text below; typed questions go to a free,
    tool-less AI Worker (twin-worker/ in the project folder). If the Worker fails or a limit is hit,
    the canned answers are the fallback. */
