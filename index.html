@@ -61,6 +61,10 @@ details.prev .list{margin-top:10px}
 .bars .row{display:grid;grid-template-columns:92px 1fr 34px;gap:8px;align-items:center;margin:5px 0;font:12px var(--mono)}.bars .bar{height:14px;background:var(--blue)}.bars .row:nth-child(3n+2) .bar{background:var(--red)}.bars .row:nth-child(3n) .bar{background:var(--yel)}.bars .n{text-align:right}
 .big{font:800 30px var(--sans)}.big small{font:12px var(--mono)}
 .mini{font:12px var(--mono)!important;color:var(--mut);margin:2px 0 8px!important}.card .logocol{display:flex;flex-direction:column;gap:6px;flex:none}
+.question,.solution{color:var(--ink)!important;background:#f3f1ec;border-left:5px solid var(--blue);padding:10px 12px;margin:2px 0 10px!important}
+.question b,.solution b{display:block;font:600 11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-bottom:3px}
+.question{border-left-color:var(--red)}.question b{color:var(--red)}
+.solution{background:none;border-left:0;padding:0 12px 0 17px}.solution b{color:#d1a400}
 .sbtn{display:flex;flex-wrap:wrap;gap:8px}.sbtn .btn{margin:0;padding:11px 15px}
 .earlier{margin-top:18px;padding:14px 18px;border-left:6px solid var(--ink);background:#fff}.earlier h3{margin:0 0 6px;font:700 15px var(--sans)}.earlier p{margin:0;color:var(--mut);font-size:14px}
 /* timeline */
@@ -184,21 +188,24 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <div class="card"><img src="img/jai.jpg" alt="JAI"><div>
     <div class="chips"><span class="chip live">working every day</span><span class="chip">personal AI agent · OpenClaw</span></div>
     <h3>JAI, my personal AI agent</h3>
-    <p>Built on OpenClaw, then transformed and tailored to the way I work. JAI supports me in idea generation, preparation, marketing, coding, testing, communication, family arrangements and much more. It also built and maintains this website.</p>
+    <p class="question"><b>Challenge</b>One person with a job, ventures, teaching and a family never has enough hours.</p>
+    <p class="solution"><b>Developed solution</b>A personal AI agent on OpenClaw that handles research, coding, marketing, communication and admin. It also built and runs this website.</p>
     <a class="btn" href="#/agent">Ask T.JAI, JAI's twin brother</a>
   </div></div>
 
   <div class="card"><img src="img/krugozore.png" alt=""><div>
     <div class="chips"><span class="chip">iPhone app</span><span class="chip">iOS / Apple</span><span class="chip">coming soon</span><span class="chip">in development since summer 2026</span></div>
     <h3>Krugozore, iOS app for iPhone, iPad and Mac</h3>
-    <p>AI that runs locally on your device: no services in between and no cloud copy of your data. It gives you access to free local models and to cloud models when you choose them.</p>
-    <a class="btn ghost" href="https://inofc.github.io/krugozore-site/">About the app</a>
+    <p class="question"><b>Challenge</b>Most AI apps send your data through middlemen and keep a copy in the cloud.</p>
+    <p class="solution"><b>Developed solution</b>An Apple app that runs AI on your device: free local models, cloud models only when you choose.</p>
+    <a class="btn ghost" href="https://inofc.github.io/krugozore-site/">See the product</a>
   </div></div>
 
   <div class="card"><img src="img/krugozore.png" alt=""><div>
     <div class="chips"><span class="chip live">live since 2023</span><span class="chip">Telegram bot</span></div>
     <h3>Krugozore GPT AI chatbot on Telegram</h3>
-    <p>A general-purpose AI assistant inside Telegram: ask, write, translate and think things through with leading AI models, with nothing to install.</p>
+    <p class="question"><b>Challenge</b>Leading AI models meant new apps and accounts for everyday users.</p>
+    <p class="solution"><b>Developed solution</b>An AI assistant inside Telegram: ask, write and translate with top models, nothing to install.</p>
     <p class="mini">110K users in total · 30K monthly users at peak · now 1–2K monthly and 100–200 daily users</p>
     <div class="chips tech"><span class="chip">Python</span><span class="chip">virtual machines</span><span class="chip">PostgreSQL</span><span class="chip">multiple LLMs via aggregators and direct provider APIs</span></div>
     <a class="btn" href="https://t.me/Krugozore_ai_chatbot">Open in Telegram</a>
@@ -207,7 +214,8 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <div class="card"><img src="img/gaf.jpg" alt="Mr. G.A.F."><div>
     <div class="chips"><span class="chip live">open source</span><span class="chip">AI skill</span></div>
     <h3>GAF, Generative AI Factory</h3>
-    <p>An open-source skill for setting up your own AI factory for building digital products: your community proposes ideas, scheduled AI roles review them, build the winners and ship. Tested in Knight Duel and the Krugozore iOS app.</p>
+    <p class="question"><b>Challenge</b>Building digital products needs a team most founders don't have.</p>
+    <p class="solution"><b>Developed solution</b>An open-source AI factory: your community proposes ideas, AI roles review, build and ship the winners. Tested in Knight Duel and Krugozore.</p>
     <a class="btn" href="https://gaf-site.vercel.app">Meet Mr. G.A.F.</a>
     <a class="btn ghost" href="https://github.com/inofc/gaf">GitHub</a>
   </div></div>
@@ -215,14 +223,16 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <div class="card"><img src="img/knightduel.jpg" alt="Knight Duel"><div>
     <div class="chips"><span class="chip">experimental</span><span class="chip">web game</span></div>
     <h3>Knight Duel</h3>
-    <p>A small web game whose development is fully powered by an autonomous agentic AI factory: players suggest, AI agents build and ship.</p>
+    <p class="question"><b>Challenge</b>Every product update waits for a developer's time.</p>
+    <p class="solution"><b>Developed solution</b>A web game developed by an autonomous AI factory: players suggest, AI agents build and ship.</p>
     <a class="btn" href="https://knight-duel.vercel.app">Play Knight Duel</a>
   </div></div>
 
   <div class="card fs"><div class="logocol"><img src="img/fs-en.jpg" alt="Fictional Switzerland"><img src="img/fs-de.jpg" alt="Erfundeni Schwiiz"></div><div>
     <div class="chips"><span class="chip live">live since Oct 2026</span><span class="chip">in development 2026</span><span class="chip">weekly · EN + DE</span></div>
     <h3>Fictional Switzerland · Erfundeni Schwiiz</h3>
-    <p>An experimental faceless media project, fully powered by agentic AI systems and workflows, from development to publishing. Made with big love for my home, Switzerland: weekly stories in English and German that tell fictional tales about real, key elements of Swissness, and what makes this country Swiss.</p>
+    <p class="question"><b>Challenge</b>A media channel needs writers, editors and video makers every week.</p>
+    <p class="solution"><b>Developed solution</b>Weekly fictional stories about real Swissness, in English and German, made and published by agentic AI. Made with love for my home, Switzerland.</p>
     <p class="mini"><b>EN</b> · Fictional Switzerland</p>
     <a class="btn" href="https://www.youtube.com/@fictionalswitzerland">YouTube</a>
     <a class="btn ghost" href="https://www.instagram.com/fictionalswitzerland/">Instagram</a>
