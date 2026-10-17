@@ -20,10 +20,10 @@ Applied AI practitioner in Zurich. 18 years in international banking, then start
 ## Speaking
 - Head of AI Club Zurich, founder and host (invitation only).
 - ETH Zurich guest lecture, 18 Nov 2026. .NET Day Switzerland, 25 Aug 2026: "How Not to Fail with AI".
-- Talks: ETH Zurich guest lecture 18 Nov 2026 (upcoming); .NET Day Switzerland 2026 "How Not to Fail with AI"; GenAI Zürich 2026 "AI Adoption in a Global Manufacturing Company"; Swiss Testing Day 2026 "Why AI Is Useless for Compliance …and Why You Still Need It"; AgentCon Zurich 2026 and .NET Day 2025 and GenAI Zürich 2025 "Give Work to AI"; Data Conference Switzerland 2025 "From Ticket Chaos to Strategic Efficiency"; Legal Revolution 2025 (Würzburg) panel "When AI Projects Fail"; Alpine Tech Forum Zurich 2025 speaker; GenAI Zürich 2024 "How GenAI Can Transform User-Centricity and Content Consumption".
+- Talks: ETH Zurich guest lecture 18 Nov 2026 (upcoming); .NET Day Switzerland 2026 "How Not to Fail with AI"; GenAI Zürich 2026 "AI Adoption in a Global Manufacturing Company"; Swiss Testing Day 2026 "Why AI Is Useless for Compliance …and Why You Still Need It"; AgentCon Zurich 2026 and .NET Day 2025 and GenAI Zürich 2025 "Give Work to AI"; Web Summit Lisbon 2024 and 2025 ALPHA startup booth for Swiss AI Chatbot Factory; Data Conference Switzerland 2025 "From Ticket Chaos to Strategic Efficiency"; Legal Revolution 2025 (Würzburg) panel "When AI Projects Fail"; Alpine Tech Forum Zurich 2025 panel "How Agentic AI Is Driving an Efficiency Revolution"; AlpsGenAI Summit 2025 "Give Work to Robots"; GenAI Zürich 2024 "How GenAI Can Transform User-Centricity and Content Consumption". Each past conference entry on the page links to Nick's relevant LinkedIn post.
 
 ## Insights
-- Interviews: Sander Recommends (2026), Beyond Coding Podcast #177.
+- Interviews: Sander Recommends (2026); DDDM.FM with Lukasz Schab, "Managing people — and AI" (Oct 2026, https://lnkd.in/p/eHuDnyxC); Beyond Coding Podcast #177.
 - Key ideas: the atomic AI company; the model is not your advantage; tools vs. skills.
 
 ## Contact
