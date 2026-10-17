@@ -61,6 +61,8 @@ details.prev .list{margin-top:10px}
 .bars .row{display:grid;grid-template-columns:92px 1fr 34px;gap:8px;align-items:center;margin:5px 0;font:12px var(--mono)}.bars .bar{height:14px;background:var(--blue)}.bars .row:nth-child(3n+2) .bar{background:var(--red)}.bars .row:nth-child(3n) .bar{background:var(--yel)}.bars .n{text-align:right}
 .big{font:800 30px var(--sans)}.big small{font:12px var(--mono)}
 .mini{font:12px var(--mono)!important;color:var(--mut);margin:2px 0 8px!important}.card .logocol{display:flex;flex-direction:column;gap:6px;flex:none}
+.card .side,.card .logocol{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex:none;width:112px}.card .side img{width:72px;height:72px}.side .chips,.logocol .chips{flex-direction:column;align-items:flex-start;gap:4px;margin:0}.side .chip,.logocol .chip{line-height:1.35}
+@media (max-width:480px){.card .side,.card .logocol{width:92px}.card .side img{width:60px;height:60px}.side .chip,.logocol .chip{font-size:10px;padding:2px 6px}}
 .question,.solution{color:var(--ink)!important;background:#f3f1ec;border-left:5px solid var(--blue);padding:10px 12px;margin:2px 0 10px!important}
 .question b,.solution b{display:block;font:600 11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-bottom:3px}
 .question{border-left-color:var(--red)}.question b{color:var(--red)}
@@ -190,24 +192,21 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
   <div class="tl-f pf" data-g="p"><span class="lbl">Platform</span><button class="on" data-f="all">All</button><button data-f="apple">Apple</button><button data-f="telegram">Telegram</button><button data-f="web">Web</button><button data-f="video">Video</button><button data-f="agents">AI agents</button><button data-f="opensource">Open source</button></div>
   <p class="none">No projects match this filter yet.</p>
 
-  <div data-s="live" data-p="agents" class="proj card"><img src="img/jai.jpg" alt="JAI"><div>
-    <div class="chips"><span class="chip live">working every day</span><span class="chip">personal AI agent · OpenClaw</span></div>
+  <div data-s="live" data-p="agents" class="proj card"><div class="side"><img src="img/jai.jpg" alt="JAI"><div class="chips"><span class="chip live">working every day</span><span class="chip">personal AI agent · OpenClaw</span></div></div><div>
     <h3>JAI, my personal AI agent</h3>
     <p class="question"><b>Challenge</b>One person with a job, ventures, teaching and a family never has enough hours.</p>
     <p class="solution"><b>Developed solution</b>A personal AI agent on OpenClaw that handles research, coding, marketing, communication and admin. It also built and runs this website.</p>
     <a class="btn" href="#/agent">Ask T.JAI, JAI's twin brother</a>
   </div></div>
 
-  <div data-s="dev" data-p="apple" class="proj card"><img src="img/krugozore.png" alt=""><div>
-    <div class="chips"><span class="chip">iPhone app</span><span class="chip">iOS / Apple</span><span class="chip">coming soon</span><span class="chip">in development since summer 2026</span></div>
+  <div data-s="dev" data-p="apple" class="proj card"><div class="side"><img src="img/krugozore.png" alt=""><div class="chips"><span class="chip">iPhone app</span><span class="chip">iOS / Apple</span><span class="chip">coming soon</span><span class="chip">in development since summer 2026</span></div></div><div>
     <h3>Krugozore, iOS app for iPhone, iPad and Mac</h3>
     <p class="question"><b>Challenge</b>Most AI apps send your data through middlemen and keep a copy in the cloud.</p>
     <p class="solution"><b>Developed solution</b>An Apple app that runs AI on your device and keeps your data only there, with no cloud servers and no cloud storage. Your iPhone is your own isolated server. Free local models on top, and cloud models only when it makes sense: AI suggests, you decide.</p>
     <a class="btn ghost" href="https://inofc.github.io/krugozore-site/">See the product</a>
   </div></div>
 
-  <div data-s="live" data-p="telegram" class="proj card"><img src="img/krugozore.png" alt=""><div>
-    <div class="chips"><span class="chip live">live since 2023</span><span class="chip">Telegram bot</span></div>
+  <div data-s="live" data-p="telegram" class="proj card"><div class="side"><img src="img/krugozore.png" alt=""><div class="chips"><span class="chip live">live since 2023</span><span class="chip">Telegram bot</span><span class="chip">first version of Krugozore</span></div></div><div>
     <h3>Krugozore GPT AI chatbot on Telegram</h3>
     <p class="question"><b>Challenge</b>Access to AI should be open to everyone: no separate AI app needed if you already have Telegram.</p>
     <p class="solution"><b>Developed solution</b>An AI assistant inside a Telegram bot: ask, write, generate images and videos, check the weather and play games, with many different models in one chat.</p>
@@ -216,8 +215,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn" href="https://t.me/Krugozore_ai_chatbot">Open in Telegram</a>
   </div></div>
 
-  <div data-s="live" data-p="agents opensource" class="proj card"><img src="img/gaf.jpg" alt="Mr. G.A.F."><div>
-    <div class="chips"><span class="chip live">open source</span><span class="chip">AI skill</span></div>
+  <div data-s="live" data-p="agents opensource" class="proj card"><div class="side"><img src="img/gaf.jpg" alt="Mr. G.A.F."><div class="chips"><span class="chip live">open source</span><span class="chip">AI skill</span></div></div><div>
     <h3>GAF, Generative AI Factory</h3>
     <p class="question"><b>Challenge</b>Building digital products needs a team most founders don't have.</p>
     <p class="solution"><b>Developed solution</b>An open-source AI factory: your community proposes ideas, AI roles review, build and ship the winners. Tested in Knight Duel and Krugozore.</p>
@@ -225,16 +223,14 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn ghost" href="https://github.com/inofc/gaf">GitHub</a>
   </div></div>
 
-  <div data-s="dev" data-p="web agents" class="proj card"><img src="img/knightduel.jpg" alt="Knight Duel"><div>
-    <div class="chips"><span class="chip">experimental</span><span class="chip">web game</span></div>
+  <div data-s="dev" data-p="web agents" class="proj card"><div class="side"><img src="img/knightduel.jpg" alt="Knight Duel"><div class="chips"><span class="chip">experimental</span><span class="chip">web game</span></div></div><div>
     <h3>Knight Duel</h3>
     <p class="question"><b>Challenge</b>Every product update waits for a developer's time.</p>
     <p class="solution"><b>Developed solution</b>A web game developed by an autonomous AI factory: players suggest, AI agents build and ship.</p>
     <a class="btn" href="https://knight-duel.vercel.app">Play Knight Duel</a>
   </div></div>
 
-  <div data-s="live" data-p="video agents" class="proj card fs"><div class="logocol"><img src="img/fs-en.jpg" alt="Fictional Switzerland"><img src="img/fs-de.jpg" alt="Erfundeni Schwiiz"></div><div>
-    <div class="chips"><span class="chip live">live since Oct 2026</span><span class="chip">in development 2026</span><span class="chip">weekly · EN + DE</span></div>
+  <div data-s="live" data-p="video agents" class="proj card fs"><div class="logocol"><img src="img/fs-en.jpg" alt="Fictional Switzerland"><img src="img/fs-de.jpg" alt="Erfundeni Schwiiz"><div class="chips"><span class="chip live">live since Oct 2026</span><span class="chip">in development 2026</span><span class="chip">weekly · EN + DE</span></div></div><div>
     <h3>Fictional Switzerland · Erfundeni Schwiiz</h3>
     <p class="question"><b>Challenge</b>A media channel needs writers, editors and video makers every week.</p>
     <p class="solution"><b>Developed solution</b>Weekly fictional stories about real Swissness, in English and German, made and published by agentic AI. Made with love for my home, Switzerland.</p>
