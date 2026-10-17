@@ -76,6 +76,8 @@ details.prev .list{margin-top:10px}
 .tl li.work{--c:var(--red)}.tl li.study{--c:var(--blue)}.tl li.build{--c:var(--yel)}
 .tl .y{font:12px var(--mono);color:var(--mut)}.tl h3{margin:2px 0}.tl p{margin:2px 0 0;color:var(--mut);font-size:15px}
 .tl li.hide{display:none}
+.pf{flex-wrap:wrap;margin:4px 0 8px}.pf+.pf{margin-bottom:18px}.pf .lbl{font:600 11px var(--mono);color:var(--mut);align-self:center;min-width:64px;text-transform:uppercase}
+#lab .proj.hide{display:none}#lab .none{display:none;color:var(--mut)}
 /* agent terminal (own page) */
 .a{background:var(--yel);font:13px/1.5 var(--mono);padding:18px 20px;display:flex;flex-direction:column;min-height:360px;border:6px solid var(--ink)}
 .a .h{font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:8px}
@@ -184,8 +186,11 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
 <section id="lab">
   <h2>AI Projects</h2>
   <p class="lead">For many years I've been fascinated by one idea: AI that helps people grow. These are the projects where I put it to work. I could not have achieved so much without my AI agents.</p>
+  <div class="tl-f pf" data-g="s"><span class="lbl">Status</span><button class="on" data-f="live">Live</button><button data-f="dev">In development</button><button data-f="ideas">Ideas</button><button data-f="earlier">Earlier</button><button data-f="all">All</button></div>
+  <div class="tl-f pf" data-g="p"><span class="lbl">Platform</span><button data-f="apple">Apple</button><button data-f="telegram">Telegram</button><button data-f="web">Web</button><button data-f="video">Video</button><button data-f="agents">AI agents</button><button data-f="opensource">Open source</button><button class="on" data-f="all">All</button></div>
+  <p class="none">No projects match this filter yet.</p>
 
-  <div class="card"><img src="img/jai.jpg" alt="JAI"><div>
+  <div data-s="live" data-p="agents" class="proj card"><img src="img/jai.jpg" alt="JAI"><div>
     <div class="chips"><span class="chip live">working every day</span><span class="chip">personal AI agent · OpenClaw</span></div>
     <h3>JAI, my personal AI agent</h3>
     <p class="question"><b>Challenge</b>One person with a job, ventures, teaching and a family never has enough hours.</p>
@@ -193,7 +198,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn" href="#/agent">Ask T.JAI, JAI's twin brother</a>
   </div></div>
 
-  <div class="card"><img src="img/krugozore.png" alt=""><div>
+  <div data-s="dev" data-p="apple" class="proj card"><img src="img/krugozore.png" alt=""><div>
     <div class="chips"><span class="chip">iPhone app</span><span class="chip">iOS / Apple</span><span class="chip">coming soon</span><span class="chip">in development since summer 2026</span></div>
     <h3>Krugozore, iOS app for iPhone, iPad and Mac</h3>
     <p class="question"><b>Challenge</b>Most AI apps send your data through middlemen and keep a copy in the cloud.</p>
@@ -201,7 +206,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn ghost" href="https://inofc.github.io/krugozore-site/">See the product</a>
   </div></div>
 
-  <div class="card"><img src="img/krugozore.png" alt=""><div>
+  <div data-s="live" data-p="telegram" class="proj card"><img src="img/krugozore.png" alt=""><div>
     <div class="chips"><span class="chip live">live since 2023</span><span class="chip">Telegram bot</span></div>
     <h3>Krugozore GPT AI chatbot on Telegram</h3>
     <p class="question"><b>Challenge</b>Access to AI should be open to everyone: no separate AI app needed if you already have Telegram.</p>
@@ -211,7 +216,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn" href="https://t.me/Krugozore_ai_chatbot">Open in Telegram</a>
   </div></div>
 
-  <div class="card"><img src="img/gaf.jpg" alt="Mr. G.A.F."><div>
+  <div data-s="live" data-p="agents opensource" class="proj card"><img src="img/gaf.jpg" alt="Mr. G.A.F."><div>
     <div class="chips"><span class="chip live">open source</span><span class="chip">AI skill</span></div>
     <h3>GAF, Generative AI Factory</h3>
     <p class="question"><b>Challenge</b>Building digital products needs a team most founders don't have.</p>
@@ -220,7 +225,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn ghost" href="https://github.com/inofc/gaf">GitHub</a>
   </div></div>
 
-  <div class="card"><img src="img/knightduel.jpg" alt="Knight Duel"><div>
+  <div data-s="dev" data-p="web agents" class="proj card"><img src="img/knightduel.jpg" alt="Knight Duel"><div>
     <div class="chips"><span class="chip">experimental</span><span class="chip">web game</span></div>
     <h3>Knight Duel</h3>
     <p class="question"><b>Challenge</b>Every product update waits for a developer's time.</p>
@@ -228,7 +233,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn" href="https://knight-duel.vercel.app">Play Knight Duel</a>
   </div></div>
 
-  <div class="card fs"><div class="logocol"><img src="img/fs-en.jpg" alt="Fictional Switzerland"><img src="img/fs-de.jpg" alt="Erfundeni Schwiiz"></div><div>
+  <div data-s="live" data-p="video agents" class="proj card fs"><div class="logocol"><img src="img/fs-en.jpg" alt="Fictional Switzerland"><img src="img/fs-de.jpg" alt="Erfundeni Schwiiz"></div><div>
     <div class="chips"><span class="chip live">live since Oct 2026</span><span class="chip">in development 2026</span><span class="chip">weekly · EN + DE</span></div>
     <h3>Fictional Switzerland · Erfundeni Schwiiz</h3>
     <p class="question"><b>Challenge</b>A media channel needs writers, editors and video makers every week.</p>
@@ -244,7 +249,20 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn ghost" href="https://www.tiktok.com/@erfundenischwiiz">TikTok</a>
     <a class="btn ghost" href="https://x.com/ErfundeniSwiss">X</a>
   </div></div>
-  <div class="earlier"><h3>Earlier projects</h3>
+  <div data-s="ideas" data-p="agents" class="proj card"><div>
+    <div class="chips"><span class="chip">idea</span><span class="chip">banking · financial services</span></div>
+    <h3>AI Agent Bank</h3>
+    <p class="question"><b>Challenge</b>Banks still run on thousands of manual steps that make them slow and expensive for clients.</p>
+    <p class="solution"><b>Proposed solution</b>A financial institution designed from day one around AI agents: onboarding, credit, compliance and service, with people setting the rules and signing off.</p>
+  </div></div>
+
+  <div data-s="ideas" data-p="video agents" class="proj card"><div>
+    <div class="chips"><span class="chip">idea</span><span class="chip">faceless video channel</span></div>
+    <h3>Human Greatness</h3>
+    <p class="question"><b>Challenge</b>The people and inventions that shaped humanity are told in long formats most people never finish.</p>
+    <p class="solution"><b>Proposed solution</b>One-minute comic-page stories about the greatest people, inventions and turning points in history, made by agentic AI.</p>
+  </div></div>
+  <div data-s="earlier" data-p="" class="proj earlier"><h3>Earlier projects</h3>
     <p>In the last 4 years I built or co-founded 20+ AI projects, among them Swiss AI Chatbot Factory, a media news aggregator, English-language Swiss news for expats, an AI tutor for kids, an AI palm reader, web games, a football fans' social network (alpha) and an AI competitor analyst for banks. All of them worked well technically; some were sold, others stopped for lack of client demand. Each one added skills and experience I use every day.</p>
   </div>
 </section>
@@ -366,6 +384,7 @@ function route(){const id=location.hash.replace('#/','');const inner=ids.include
  ids.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=s===id?'block':'none'});scrollTo(0,0)}
 const home=document.getElementById('home'),inner_=document.getElementById('inner');
 addEventListener('hashchange',route);route();
+(()=>{const F={s:'live',p:'all'};const ap=()=>{let n=0;document.querySelectorAll('#lab .proj').forEach(c=>{const ok=(F.s==='all'||c.dataset.s===F.s)&&(F.p==='all'||c.dataset.p.split(' ').includes(F.p));c.classList.toggle('hide',!ok);n+=ok});document.querySelector('#lab .none').style.display=n?'none':'block'};document.querySelectorAll('.pf button').forEach(b=>b.onclick=()=>{const g=b.parentNode.dataset.g;F[g]=b.dataset.f;b.parentNode.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));ap()});ap()})();
 /* JAI twin brother: chips answer instantly from the canned text below; typed questions go to a free,
    tool-less AI Worker (twin-worker/ in the project folder). If the Worker fails or a limit is hit,
    the canned answers are the fallback. */
@@ -430,7 +449,7 @@ function loadStats(){if(statsLoaded)return;statsLoaded=true;fetch(SBASE+'/stats'
  bars(document.getElementById('vsrc'),j.sources)}).catch(()=>{statsLoaded=false})}
 try{fetch(SBASE+'/hit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:(location.hash.replace('#/','')||'home'),ref:document.referrer||''}),keepalive:true})}catch(e){}
 addEventListener('hashchange',()=>{if(/#\/(agent|contact)/.test(location.hash))loadStats()});if(/#\/(agent|contact)/.test(location.hash))loadStats();
-document.querySelectorAll('.tl-f button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tl-f button').forEach(x=>x.classList.toggle('on',x===b));
+document.querySelectorAll('.tl-f:not(.pf) button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tl-f:not(.pf) button').forEach(x=>x.classList.toggle('on',x===b));
  document.querySelectorAll('.tl li').forEach(li=>li.classList.toggle('hide',b.dataset.f!=='all'&&!li.classList.contains(b.dataset.f)))});
 </script>
 </body>
