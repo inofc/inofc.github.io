@@ -223,6 +223,14 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <a class="btn ghost" href="https://github.com/inofc/gaf">GitHub</a>
   </div></div>
 
+  <div data-s="live" data-p="web opensource" class="proj card"><div class="side"><img src="img/mondrian-code.png" alt="The words Mondrian Code written in Mondrian Code"><div class="chips"><span class="chip live">open source</span><span class="chip">web</span><span class="chip">writing system</span></div></div><div>
+    <h3>Mondrian Code</h3>
+    <p class="question"><b>Challenge</b>Bits, bytes and tokens are invisible, which makes it hard to show how computers and AI actually store text.</p>
+    <p class="solution"><b>Developed solution</b>A writing system in Mondrian's five colours: any Latin, Cyrillic or Chinese text becomes a square painting that can be read back, in any of four directions. Built on the ideas behind Huffman coding, ZIP, UTF-8 and LLM tokenizers. The logo above says "Mondrian Code".</p>
+    <a class="btn" href="https://inofc.github.io/mondrian-code/">Paint your own text</a>
+    <a class="btn ghost" href="https://github.com/inofc/mondrian-code">GitHub</a>
+  </div></div>
+
   <div data-s="dev" data-p="web agents" class="proj card"><div class="side"><img src="img/knightduel.jpg" alt="Knight Duel"><div class="chips"><span class="chip">experimental</span><span class="chip">web game</span></div></div><div>
     <h3>Knight Duel</h3>
     <p class="question"><b>Challenge</b>Every product update waits for a developer's time.</p>
@@ -387,12 +395,12 @@ addEventListener('hashchange',route);route();
 const TWIN={url:'https://jai-twin.jai-twin.workers.dev/chat',sitekey:'0x4AAAAAAFYsg9vIO3TT2mPi'};
 const A={
  trainings:'Nick teaches leaders to put AI to work.\n· Public masterclass: AI agents with Claude and GPT, 11 + 25 Nov online, 28 Nov in Zurich\n· Private Executive programmes\n· Digicomp Academy course\n→ <a href="#/trainings">open Trainings</a>',
- lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (my brother; I\'m T.JAI, his public twin)\n· Krugozore iOS app, local AI on your device (coming soon)\n· Krugozore GPT chatbot on Telegram, 110K users since 2023\n· GAF, open-source Generative AI Factory skill\n· Knight Duel, a web game built by an AI factory\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
+ lab:'Nick\'s AI projects:\n· JAI, his personal AI agent on OpenClaw (my brother; I\'m T.JAI, his public twin)\n· Krugozore iOS app, local AI on your device (coming soon)\n· Krugozore GPT chatbot on Telegram, 110K users since 2023\n· GAF, open-source Generative AI Factory skill\n· Mondrian Code, an open-source writing system in Mondrian's colours\n· Knight Duel, a web game built by an AI factory\n· Fictional Switzerland, a weekly AI film series\n→ <a href="#/lab">open AI Projects</a>',
  talks:'Next: guest lecture at ETH Zurich, 18 Nov. Recent: .NET Day Switzerland.\nHe also hosts the Head of AI Club Zurich.\n→ <a href="#/social">open Speaking</a>',
  writing:'Two long interviews, plus posts on the atomic AI company and why the model is not your advantage.\n→ <a href="#/pubs">open Insights</a>',
  contact:'Fastest: a LinkedIn message.\n→ <a href="https://www.linkedin.com/in/nickgushchin/">linkedin.com/in/nickgushchin</a>',
  help:'Try: trainings · projects · talks · insights · contact'};
-const K=[['trainings',/train|class|course|teach|workshop|digicomp|book/],['lab',/lab|build|project|app|krugozore|film|switzerland/],['talks',/talk|speak|conference|club|event|lecture/],['writing',/insight|writ|post|article|interview|read/],['contact',/contact|mail|reach|hire|call/]];
+const K=[['trainings',/train|class|course|teach|workshop|digicomp|book/],['lab',/lab|build|project|app|krugozore|film|switzerland|mondrian|open.?source/],['talks',/talk|speak|conference|club|event|lecture/],['writing',/insight|writ|post|article|interview|read/],['contact',/contact|mail|reach|hire|call/]];
 const out=document.getElementById('out'),inp=document.getElementById('in');
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const linkify=s=>esc(s).replace(/https:\/\/[^\s)<]+[^\s)<.,;:!?'"]/g,u=>u.startsWith('https://inofc.github.io/#/')?'<a href="'+u.slice(24)+'">'+u+'</a>':'<a href="'+u+'" target="_blank" rel="noopener">'+u+'</a>');
