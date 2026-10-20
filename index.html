@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nick Gushchin">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://inofc.github.io/img/og-mondrian-4x3.jpg">
+<meta property="og:image" content="https://nickgushchin.github.io/img/og-mondrian-4x3.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="900">
 <meta property="og:image:alt" content="Nick Gushchin website: Mondrian-style colour blocks for Trainings, AI Projects, Talks, Insights and T.JAI">
@@ -203,7 +203,7 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <h3>Krugozore, iOS app for iPhone, iPad and Mac</h3>
     <p class="question"><b>Challenge</b>Most AI apps send your data through middlemen and keep a copy in the cloud.</p>
     <p class="solution"><b>Developed solution</b>An Apple app that runs AI on your device and keeps your data only there, with no cloud servers and no cloud storage. Your iPhone is your own isolated server. Free local models on top, and cloud models only when it makes sense: AI suggests, you decide.</p>
-    <a class="btn ghost" href="https://inofc.github.io/krugozore-site/">See the product</a>
+    <a class="btn ghost" href="https://nickgushchin.github.io/krugozore-site/">See the product</a>
   </div></div>
 
   <div data-s="live" data-p="telegram" class="proj card"><div class="side"><img src="img/krugozore.png" alt=""><div class="chips"><span class="chip live">live since 2023</span><span class="chip">Telegram bot</span><span class="chip">first version of Krugozore</span></div></div><div>
@@ -220,15 +220,15 @@ h3{font:600 17px var(--sans);margin:0 0 4px}
     <p class="question"><b>Challenge</b>Building digital products needs a team most founders don't have.</p>
     <p class="solution"><b>Developed solution</b>An open-source AI factory: your community proposes ideas, AI roles review, build and ship the winners. Tested in Knight Duel and Krugozore.</p>
     <a class="btn" href="https://gaf-site.vercel.app">Meet Mr. G.A.F.</a>
-    <a class="btn ghost" href="https://github.com/inofc/gaf">GitHub</a>
+    <a class="btn ghost" href="https://github.com/nickgushchin/gaf">GitHub</a>
   </div></div>
 
   <div data-s="live" data-p="web opensource" class="proj card"><div class="side"><img src="img/mondrian-code-logo-v4.png" alt="A Mondrian Code painting that spells MONDRIAN CODE."><div class="chips"><span class="chip live">open source</span><span class="chip">web</span><span class="chip">writing system</span></div></div><div>
     <h3>Mondrian Code</h3>
     <p class="question"><b>Challenge</b>Converting P.M. style into readable coding language</p>
     <p class="solution"><b>Developed solution</b>A writing system in Mondrian's five colours: text in ten scripts, from Latin, Cyrillic and Chinese to Korean, Arabic, Hebrew, Hindi and Amharic, becomes a square painting that can be read back, in any of four directions. Built on the ideas behind Huffman coding, ZIP, UTF-8 and LLM tokenizers. The logo is a painting in the code: decode it to read its name.</p>
-    <a class="btn" href="https://inofc.github.io/mondrian-code/">Paint your own text</a>
-    <a class="btn ghost" href="https://github.com/inofc/mondrian-code">GitHub</a>
+    <a class="btn" href="https://nickgushchin.github.io/mondrian-code/">Paint your own text</a>
+    <a class="btn ghost" href="https://github.com/nickgushchin/mondrian-code">GitHub</a>
   </div></div>
 
   <div data-s="dev" data-p="web agents" class="proj card"><div class="side"><img src="img/knightduel.jpg" alt="Knight Duel"><div class="chips"><span class="chip">experimental</span><span class="chip">web game</span></div></div><div>
@@ -403,7 +403,7 @@ const A={
 const K=[['trainings',/train|class|course|teach|workshop|digicomp|book/],['lab',/lab|build|project|app|krugozore|film|switzerland|mondrian|open.?source/],['talks',/talk|speak|conference|club|event|lecture/],['writing',/insight|writ|post|article|interview|read/],['contact',/contact|mail|reach|hire|call/]];
 const out=document.getElementById('out'),inp=document.getElementById('in');
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-const linkify=s=>esc(s).replace(/https:\/\/[^\s)<]+[^\s)<.,;:!?'"]/g,u=>u.startsWith('https://inofc.github.io/#/')?'<a href="'+u.slice(24)+'">'+u+'</a>':'<a href="'+u+'" target="_blank" rel="noopener">'+u+'</a>');
+const linkify=s=>esc(s).replace(/https:\/\/[^\s)<]+[^\s)<.,;:!?'"]/g,u=>u.startsWith('https://nickgushchin.github.io/#/')?'<a href="'+u.slice(24)+'">'+u+'</a>':'<a href="'+u+'" target="_blank" rel="noopener">'+u+'</a>');
 function show(q,html){out.innerHTML+='\n\n<span class="q">t.jai$ '+esc(q)+'</span>\n'+html;out.scrollTop=1e6}
 function canned(q){return A[(K.find(([,r])=>r.test(q.toLowerCase()))||['help'])[0]]}
 /* Turnstile: one fresh token per message */
