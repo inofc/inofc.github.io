@@ -29,3 +29,5 @@ Applied AI practitioner in Zurich. 18 years in international banking, then start
 
 ## Contact
 LinkedIn: https://www.linkedin.com/in/nickgushchin/
+
+- Oct 2025: GICP written interview, "How AI is changing workflows, underwriting and risk in credit": https://gicp.org/careers/rewriting-of-credit-work/
